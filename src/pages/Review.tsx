@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
+import Header from "../components/Review/Header";
+import ProductInfo from "../components/Review/ProductInfo";
+import ReviewForm from "../components/Review/ReviewForm";
+import ReviewPolicy from "../components/Review/ReviewPolicy";
+
 export default function Review() {
   return (
-    <div>
-      <StMainWrapper></StMainWrapper>
-    </div>
+    <StMainWrapper>
+      <Header />
+      <ProductInfo />
+      <ReviewForm />
+      <ReviewPolicy />
+    </StMainWrapper>
   );
 }
 

@@ -6,13 +6,11 @@ import MyReview from "../components/MyPage/MyReview";
 
 export default function MyPage() {
   return (
-    <div>
-      <StMainWrapper>
-        <Header />
-        <MyReview />
-        <Footer />
-      </StMainWrapper>
-    </div>
+    <StMainWrapper>
+      <Header />
+      <MyReview />
+      <Footer />
+    </StMainWrapper>
   );
 }
 
