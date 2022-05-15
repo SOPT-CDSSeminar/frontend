@@ -6,6 +6,9 @@ import App from "./App";
 import theme from "./style/theme";
 
 export const GlobalStyle = createGlobalStyle`
+*{
+  font-family: 'Noto Sans KR', sans-serif;
+}
 `;
 
 ReactDOM.render(
