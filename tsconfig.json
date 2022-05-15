@@ -23,7 +23,7 @@
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx", "src/style/theme.js",
+    "**/*.tsx",
   ],
   "exclude": [
     "node_modules"
