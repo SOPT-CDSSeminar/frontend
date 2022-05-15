@@ -1,9 +1,17 @@
 import styled from "styled-components";
 
+import Footer from "../components/MyPage/Footer";
+import Header from "../components/MyPage/Header";
+import MyReview from "../components/MyPage/MyReview";
+
 export default function MyPage() {
   return (
     <div>
-      <StMainWrapper></StMainWrapper>
+      <StMainWrapper>
+        <Header />
+        <MyReview />
+        <Footer />
+      </StMainWrapper>
     </div>
   );
 }
