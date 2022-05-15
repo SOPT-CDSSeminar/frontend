@@ -8,8 +8,8 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MyPage />} />
         <Route path="/" element={<Review />} />
+        <Route path="/mypage" element={<MyPage />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
