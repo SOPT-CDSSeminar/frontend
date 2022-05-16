@@ -27,6 +27,10 @@ const StHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  & svg {
+    cursor: pointer;
+  }
 `;
 
 const StLeftSection = styled.p`
