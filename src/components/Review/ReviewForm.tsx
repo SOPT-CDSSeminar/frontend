@@ -6,7 +6,37 @@
   - 내에서 자유롭게 컴포넌트 분리해도 되고 도입하고 싶은 거 있으면 언제든지 환영 ~~
   - 화이팅텡!
 */
+import React, { useState } from "react";
+
+import StarEvaluationArticle from "./StartEvlauation";
 
 export default function ReviewForm() {
-  return <div>ReviewForm</div>;
+  const [starEvluationList, setStarEvluationList] = useState<boolean[][]>([
+    [false, false, false, false, false],
+    [false, false, false, false, false],
+    [false, false, false, false, false],
+    [false, false, false, false, false],
+  ]);
+  const starEvaluationListTitle: string[] = ["내구성", "가격", "디자인", "배송"];
+
+  const handleStarEvaluationList = (newStarEvluationItem: boolean[], title: string) => {
+    const titleIndex = starEvaluationListTitle.indexOf(title);
+    const newStarEvluationList = [...starEvluationList];
+    newStarEvluationList[titleIndex] = newStarEvluationItem;
+    setStarEvluationList(newStarEvluationList);
+  };
+  return (
+    <>
+      {starEvaluationListTitle.map((title, index) => {
+        return (
+          <StarEvaluationArticle
+            key={title}
+            title={title}
+            starEvaluation={starEvluationList[index]}
+            handleStarEvaluationList={handleStarEvaluationList}
+          />
+        );
+      })}
+    </>
+  );
 }
