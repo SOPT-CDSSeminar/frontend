@@ -11,10 +11,44 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
     font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
   } 
 
   html {
     font-size: 62.5%;
+    font-size: 62.5%;
+    letter-spacing: -0.03rem;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  input, button {
+    outline: none; 
+    border: none;
+    background-color: transparent;
+  }
+
+  button {
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    -webkit-appearance: none; /* Safari and Chrome */
+    -moz-appearance: none; /* Firefox */
+    appearance: none;
+    
+    & : focus {
+      outline: none;
+    }
   }
 `;
 
