@@ -8,8 +8,7 @@ interface StarEvaluationArticleProps {
   starEvaluation: boolean[];
   handleStarEvaluationList: (newStarEvluationItem: boolean[], title: string) => void;
 }
-
-function StarEvaluationArticle(props: StarEvaluationArticleProps) {
+export default function StarEvaluationArticle(props: StarEvaluationArticleProps) {
   const { title, starEvaluation, handleStarEvaluationList } = props;
 
   // 별점 제어
@@ -37,7 +36,6 @@ function StarEvaluationArticle(props: StarEvaluationArticleProps) {
     </StStarEvaluationWrapper>
   );
 }
-export default StarEvaluationArticle;
 
 const StStarEvaluationWrapper = styled.article`
   display: flex;
