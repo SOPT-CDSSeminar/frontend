@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 import HeaderView from "./HeaderView";
+import NavView from "./NavView";
 
 export default function Header() {
   return (
     <StSection>
       <HeaderView />
-      <nav></nav>
-      <nav></nav>
+      <NavView />
     </StSection>
   );
 }
