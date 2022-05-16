@@ -1,6 +1,6 @@
 import "styled-components";
 
-declare module "Styled-components" {
+declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
       ohou_skyblue: string;
