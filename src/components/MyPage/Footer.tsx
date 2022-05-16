@@ -11,7 +11,6 @@ import {
   IcApple,
   IcArrow,
   IcBlog,
-  IcDnv,
   IcFacebook,
   IcGoogleplay,
   IcInstargram,
@@ -19,6 +18,7 @@ import {
   IcKakaostory,
   IcNaver,
 } from "../../asset/icon";
+import ImgDnv from "../../asset/image/MyPage/dnvImage.png";
 import { companyInfos, textLinks } from "../../core/mypageFooterInfomations";
 
 export default function Footer() {
@@ -70,7 +70,7 @@ export default function Footer() {
           <p>오늘의 집 서비스 운영</p>
           <p>2021. 09. 08 ~ 2024. 09. 07</p>
         </StIsmsHistoryText>
-        <StIcDnv />
+        <StDnvImage src={ImgDnv} alt="디앤브이" />
       </StHistoryWrapper>
     </StFooter>
   );
@@ -161,6 +161,6 @@ const StIsmsHistoryText = styled.div`
   color: ${({ theme }) => theme.colors.ohou_gray04};
 `;
 
-const StIcDnv = styled(IcDnv)`
+const StDnvImage = styled.img`
   margin-left: 1.1rem;
 `;
