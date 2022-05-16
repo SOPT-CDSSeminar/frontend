@@ -39,15 +39,15 @@ export default function StarEvaluationArticle(props: StarEvaluationArticleProps)
 
 const StStarEvaluationWrapper = styled.article`
   display: flex;
-  height: 39px;
-  margin-bottom: 25px;
-  left: 14px;
+  height: 3.9rem;
+  margin-bottom: 2.5rem;
+  left: 1.4rem;
   align-items: center;
 `;
 
 const StStarEvaluationB1 = styled.span`
-  width: 40px;
-  margin: 0px 12px;
+  width: 4rem;
+  margin: 0rem 1.2rem;
   font-family: ${({ theme }) => theme.fonts.ohou_b1};
   color: ${({ theme }) => theme.colors.ohou_gray06};
 `;
