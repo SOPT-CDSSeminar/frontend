@@ -10,16 +10,21 @@
 
 import styled from "styled-components";
 
-import { IcClose } from "../../asset/icon";
-import banner from "../../asset/image/Review/bannerImage.png";
+import { IcBanner, IcClose } from "../../asset/icon";
+
 export default function Header() {
   return (
     <StHeader>
-      <IcClose />
-      <p>리뷰쓰기</p>
-      <img src={banner} alt="배너" />
+      <StNav>
+        <IcClose />
+        <p>리뷰쓰기</p>
+      </StNav>
+      <IcBanner />
     </StHeader>
   );
 }
 
-const StHeader = styled.nav``;
+const StHeader = styled.div``;
+const StNav = styled.nav`
+  display: flex;
+`;

@@ -5,7 +5,17 @@
   - 멜팅스튜디오 정보 있는 그 블록 UI 구성해주면 됩니당당
   - 화이텡 ~~
 */
+import styled from "styled-components";
+
+//import { IcProduct } from "../../asset/icon";
+import product from "../../asset/image/Review/productImage.png";
 
 export default function ProductInfo() {
-  return <div>ProductInfo</div>;
+  return (
+    <StInfo>
+      <img src={product} alt="상품" />
+    </StInfo>
+  );
 }
+
+const StInfo = styled.div``;
