@@ -38,7 +38,7 @@ export default function MyReview() {
         return (
           <StProductCard key={name}>
             <StProductTitle>
-              [ {place} ] {name}
+              [{place}] {name}
             </StProductTitle>
             <StProductSize>{size}</StProductSize>
             <StReviewInfo>
@@ -56,18 +56,20 @@ export default function MyReview() {
 
 const StBtnBestOrder = styled.p`
   position: absolute;
-  width: 4.8rem;
-  height: 1.9rem;
   left: 2.4rem;
   top: 24.2rem;
+
+  font-family: ${({ theme }) => theme.fonts.ohou_h3};
+  color: ${({ theme }) => theme.colors.ohou_gray06};
 `;
 
 const StBtnLatestOrder = styled.p`
   position: absolute;
-  width: 3.6rem;
-  height: 1.9rem;
   left: 10.7rem;
   top: 24.2rem;
+
+  font-family: ${({ theme }) => theme.fonts.ohou_h3};
+  color: ${({ theme }) => theme.colors.ohou_skyblue};
 
   margin-left: 3.5rem;
 `;
@@ -84,14 +86,9 @@ const StProductTitle = styled.p`
   top: 33.7rem;
   margin-bottom: 0.4rem;
 
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.4rem;
-  line-height: 2rem;
+  font-family: ${({ theme }) => theme.fonts.ohou_h2};
+  color: ${({ theme }) => theme.colors.ohou_gray06};
   letter-spacing: -0.04em;
-
-  color: #292929;
 `;
 
 const StProductSize = styled.p`
@@ -102,11 +99,8 @@ const StProductSize = styled.p`
   top: 38.1rem;
   margin-bottom: 2.7rem;
 
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 120%;
+  font-family: ${({ theme }) => theme.fonts.ohou_b1};
+  color: ${({ theme }) => theme.colors.ohou_gray06};
 
   letter-spacing: -0.04em;
 
@@ -120,6 +114,9 @@ const StReviewInfo = styled.p`
   left: 1.4rem;
   top: 42.5rem;
   margin-bottom: 1.2rem;
+
+  font-family: ${({ theme }) => theme.fonts.ohou_b3};
+  color: ${({ theme }) => theme.colors.ohou_gray04};
 `;
 
 const StReviewText = styled.p`
@@ -130,16 +127,8 @@ const StReviewText = styled.p`
   top: 45.4rem;
   margin-bottom: 2.4rem;
 
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.3rem;
-  line-height: 2.1rem;
-  /* or 162% */
-
-  letter-spacing: 0.02em;
-
-  color: #292929;
+  font-family: ${({ theme }) => theme.fonts.ohou_b2};
+  color: ${({ theme }) => theme.colors.ohou_gray06};
 `;
 
 const StReviewImg = styled.img`
@@ -158,4 +147,14 @@ const StBtnEdit = styled.button`
   height: 4.8rem;
   left: 31.3rem;
   top: 49.1rem;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 2.1rem;
+  /* identical to box height, or 175% */
+  letter-spacing: 0.02em;
+
+  color: ${({ theme }) => theme.colors.ohou_gray04};
 `;
