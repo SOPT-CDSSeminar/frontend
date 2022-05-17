@@ -13,7 +13,7 @@
   - 화이ㅣ팅 ~~
 */
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function MyReview() {
@@ -31,10 +31,8 @@ export default function MyReview() {
 
   return (
     <>
-      <StBtnWrapper>
-        <StBtnBestOrder>베스트순</StBtnBestOrder>
-        <StBtnLatestOrder>최신순</StBtnLatestOrder>
-      </StBtnWrapper>
+      <StBtnBestOrder>베스트순</StBtnBestOrder>
+      <StBtnLatestOrder>최신순</StBtnLatestOrder>
       {products.map((content, idx) => {
         const { name, place, size, nickname, date, platform, image, review } = content;
         return (
@@ -42,13 +40,13 @@ export default function MyReview() {
             <StProductTitle>
               [ {place} ] {name}
             </StProductTitle>
-            {size}
+            <StProductSize>{size}</StProductSize>
             <StReviewInfo>
               {nickname} | {date} | {platform} 리뷰
             </StReviewInfo>
             <StReviewText>{review}</StReviewText>
-            <img src={image} alt="페브릭 포스터" />
-            <button>수정</button>
+            <StReviewImg src={image} alt="페브릭 포스터" />
+            <StBtnEdit>수정</StBtnEdit>
           </StProductCard>
         );
       })}
@@ -56,16 +54,22 @@ export default function MyReview() {
   );
 }
 
-const StBtnWrapper = styled.section`
-  display: flex;
-`;
-
 const StBtnBestOrder = styled.p`
   position: absolute;
+  width: 4.8rem;
+  height: 1.9rem;
+  left: 2.4rem;
+  top: 24.2rem;
 `;
 
 const StBtnLatestOrder = styled.p`
   position: absolute;
+  width: 3.6rem;
+  height: 1.9rem;
+  left: 10.7rem;
+  top: 24.2rem;
+
+  margin-left: 3.5rem;
 `;
 
 const StProductCard = styled.article`
@@ -74,11 +78,84 @@ const StProductCard = styled.article`
 
 const StProductTitle = styled.p`
   position: absolute;
+  width: 34.7rem;
+  height: 4rem;
+  left: 1.4rem;
+  top: 33.7rem;
+  margin-bottom: 0.4rem;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: -0.04em;
+
+  color: #292929;
+`;
+
+const StProductSize = styled.p`
+  position: absolute;
+  width: 6.8rem;
+  height: 1.7rem;
+  left: 1.4rem;
+  top: 38.1rem;
+  margin-bottom: 2.7rem;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 120%;
+
+  letter-spacing: -0.04em;
+
+  color: #292929;
 `;
 
 const StReviewInfo = styled.p`
   position: absolute;
+  width: 20.7rem;
+  height: 1.7rem;
+  left: 1.4rem;
+  top: 42.5rem;
+  margin-bottom: 1.2rem;
 `;
+
 const StReviewText = styled.p`
   position: absolute;
+  width: 34.7rem;
+  height: 4.2rem;
+  left: 1.4rem;
+  top: 45.4rem;
+  margin-bottom: 2.4rem;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 2.1rem;
+  /* or 162% */
+
+  letter-spacing: 0.02em;
+
+  color: #292929;
+`;
+
+const StReviewImg = styled.img`
+  position: absolute;
+  width: 9.1rem;
+  height: 9.1rem;
+  left: 1.4rem;
+  top: 52rem;
+
+  border-radius: 0.4rem;
+`;
+
+const StBtnEdit = styled.button`
+  position: absolute;
+  width: 4.8rem;
+  height: 4.8rem;
+  left: 31.3rem;
+  top: 49.1rem;
 `;
