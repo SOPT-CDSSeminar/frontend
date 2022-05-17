@@ -11,6 +11,9 @@ export default function PhotoAttach(props: PhotoAttachProps) {
   const { imgFile, handleImgFile } = props;
   const [imgBase64, setImgBase64] = useState<string>("");
 
+  const handleDeleteBtn = () => {
+    setImgBase64("");
+  };
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
@@ -39,7 +42,7 @@ export default function PhotoAttach(props: PhotoAttachProps) {
       <Stb3>사진을 첨부해주세요. (최대 1장)</Stb3>
       <StImageWrapper isAttach={Boolean(imgBase64)}>
         <p>
-          <ICDeleteBtn />
+          <ICDeleteBtn onClick={handleDeleteBtn} />
         </p>
         <StImageContent alt="선택" src={imgBase64} />
       </StImageWrapper>
