@@ -39,10 +39,10 @@ export default function StarEvaluationArticle(props: StarEvaluationArticleProps)
 
 const StStarEvaluationWrapper = styled.article`
   display: flex;
+  align-items: center;
   height: 3.9rem;
   margin-bottom: 2.5rem;
   left: 1.4rem;
-  align-items: center;
 `;
 
 const StStarEvaluationB1 = styled.span`

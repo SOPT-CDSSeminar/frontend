@@ -7,6 +7,7 @@
   - 화이팅텡!
 */
 import React, { useState } from "react";
+import styled from "styled-components";
 
 import StarEvaluationArticle from "./StartEvlauation";
 
@@ -27,6 +28,7 @@ export default function ReviewForm() {
   };
   return (
     <>
+      <StReviewh2>별점 평가</StReviewh2>
       {starEvaluationListTitle.map((title, index) => {
         return (
           <StarEvaluationArticle
@@ -40,3 +42,9 @@ export default function ReviewForm() {
     </>
   );
 }
+const StReviewh2 = styled.h2`
+  width: 5.3rem;
+  margin: 0rem 1.2rem;
+  font-family: ${({ theme }) => theme.fonts.ohou_h2};
+  color: ${({ theme }) => theme.colors.ohou_gray06};
+`;
