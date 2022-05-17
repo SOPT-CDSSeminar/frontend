@@ -7,7 +7,16 @@
   - 거기 토글링에 svg 파일도 180도 돌려주면 UI적으로 더 좋겠지?? (아래 화살표를 위 화살표로)
   - 화이텡!!!
 */
+import styled from "styled-components";
+
+import { IcDown } from "../../asset/icon";
 
 export default function ReviewPolicy() {
-  return <div>ReviewPolicy</div>;
+  return (
+    <StReviewPolicy>
+      오늘의 집 리뷰 정책
+      <IcDown />
+    </StReviewPolicy>
+  );
 }
+const StReviewPolicy = styled.div``;

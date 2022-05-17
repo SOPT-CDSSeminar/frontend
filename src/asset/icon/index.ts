@@ -18,3 +18,5 @@ export { ReactComponent as IcNaver } from "./MyPage/footer/naverIcon.svg";
 export { ReactComponent as IcHamburger } from "./MyPage/hamburgerIcon.svg";
 export { ReactComponent as IcLogo } from "./MyPage/logoIcon.svg";
 export { ReactComponent as IcSearch } from "./MyPage/searchIcon.svg";
+export { ReactComponent as IcClose } from "./Review/closeIcon.svg";
+export { ReactComponent as IcDown } from "./Review/downIcon.svg";

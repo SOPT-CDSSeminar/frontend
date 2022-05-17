@@ -8,6 +8,18 @@
   - 화이텡 ~~
 */
 
+import styled from "styled-components";
+
+import { IcClose } from "../../asset/icon";
+import banner from "../../asset/image/Review/bannerImage.png";
 export default function Header() {
-  return <div>Header</div>;
+  return (
+    <StHeader>
+      <IcClose />
+      <p>리뷰쓰기</p>
+      <img src={banner} alt="배너" />
+    </StHeader>
+  );
 }
+
+const StHeader = styled.nav``;
