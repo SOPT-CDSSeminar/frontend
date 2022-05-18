@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-import { ICBlankStar, ICFullStar } from "../../asset/icon";
+import { ICReviewStar } from "../../asset/icon";
 
 interface StarEvaluationArticleProps {
   title: string;
@@ -29,13 +29,9 @@ export default function StarEvaluationArticle(props: StarEvaluationArticleProps)
   return (
     <StStarEvaluationWrapper>
       <StStarEvaluationB1>{title}</StStarEvaluationB1>
-      {starItems.map((star, index) => {
-        return star ? (
-          <ICFullStar id={"" + index} onClick={hanldeICStar} key={title + index} />
-        ) : (
-          <ICBlankStar id={"" + index} onClick={hanldeICStar} key={title + index} />
-        );
-      })}
+      {starItems.map((star: boolean, index: number) => (
+        <StICStar isFull={star} onClick={hanldeICStar} key={title + index} id={"" + index} />
+      ))}
     </StStarEvaluationWrapper>
   );
 }
@@ -53,3 +49,19 @@ const StStarEvaluationB1 = styled.span`
   font-family: ${({ theme }) => theme.fonts.ohou_b1};
   color: ${({ theme }) => theme.colors.ohou_gray06};
 `;
+
+const StICStar = styled(ICReviewStar)<{ isFull: boolean }>`
+  path {
+    fill: ${({ theme }) => theme.colors.ohou_gray03};
+  }
+  ${({ isFull }) =>
+    isFull &&
+    css`
+      path {
+        fill: ${({ theme }) => theme.colors.ohou_skyblue};
+      }
+    `};
+`;
+// path {
+//   fill : ${({ isFull }=> isFull ? ${ ({ theme }) => theme.colors.ohou_gray06 } : ${ ({ theme }) => theme.colors.ohou_gray06 })}
+// }
