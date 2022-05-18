@@ -62,6 +62,3 @@ const StICStar = styled(ICReviewStar)<{ isFull: boolean }>`
       }
     `};
 `;
-// path {
-//   fill : ${({ isFull }=> isFull ? ${ ({ theme }) => theme.colors.ohou_gray06 } : ${ ({ theme }) => theme.colors.ohou_gray06 })}
-// }
