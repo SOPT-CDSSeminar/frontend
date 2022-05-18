@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ICBlankStar, ICFullStar } from "../../asset/image";
+import { ICBlankStar, ICFullStar } from "../../asset/icon";
 
 interface StarEvaluationArticleProps {
   title: string;
@@ -42,7 +42,6 @@ const StStarEvaluationWrapper = styled.article`
   align-items: center;
   height: 3.9rem;
   margin-bottom: 2.5rem;
-  left: 1.4rem;
 `;
 
 const StStarEvaluationB1 = styled.span`
