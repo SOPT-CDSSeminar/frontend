@@ -1,38 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { ICBlankStar, ICFullStar } from "../../asset/icon";
 
 interface StarEvaluationArticleProps {
   title: string;
-  starEvaluation: boolean[];
-  handleStarEvaluationList: (newStarEvluationItem: boolean[], title: string) => void;
+  starEvaluation: number;
+  handleStarEvaluationList: (newStarEvluationItem: number, title: string) => void;
 }
 export default function StarEvaluationArticle(props: StarEvaluationArticleProps) {
   const { title, starEvaluation, handleStarEvaluationList } = props;
 
+  const [starItems, setStarItems] = useState<boolean[]>([false, false, false, false, false]);
+  useEffect(() => {
+    const currentItems = starItems.map((star, index) => {
+      if (index < starEvaluation) return true;
+      else return false;
+    });
+    setStarItems(currentItems);
+  }, [starEvaluation]);
   // 별점 제어
   const hanldeICStar = (e: React.MouseEvent<SVGSVGElement>) => {
     const clickIndex = +e.currentTarget.id;
-    handleStarEvaluationList(
-      starEvaluation.map((star, index) => {
-        if (index === clickIndex) return !star;
-        else if (index < clickIndex) return true;
-        else return false;
-      }),
-      title,
-    );
+
+    if (starItems[clickIndex]) handleStarEvaluationList(clickIndex, title);
+    else handleStarEvaluationList(clickIndex + 1, title);
   };
   return (
     <StStarEvaluationWrapper>
       <StStarEvaluationB1>{title}</StStarEvaluationB1>
-      {starEvaluation.map((star, index) =>
-        star ? (
-          <ICFullStar id={index + ""} onClick={hanldeICStar} key={index} />
+      {starItems.map((star, index) => {
+        return star ? (
+          <ICFullStar id={"" + index} onClick={hanldeICStar} key={title + index} />
         ) : (
-          <ICBlankStar id={index + ""} onClick={hanldeICStar} key={index} />
-        ),
-      )}
+          <ICBlankStar id={"" + index} onClick={hanldeICStar} key={title + index} />
+        );
+      })}
     </StStarEvaluationWrapper>
   );
 }

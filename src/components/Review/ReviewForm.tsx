@@ -12,15 +12,10 @@ import styled from "styled-components";
 import StarEvaluationArticle from "./StartEvlauation";
 
 export default function ReviewForm() {
-  const [starEvluationList, setStarEvluationList] = useState<boolean[][]>([
-    [false, false, false, false, false],
-    [false, false, false, false, false],
-    [false, false, false, false, false],
-    [false, false, false, false, false],
-  ]);
+  const [starEvluationList, setStarEvluationList] = useState<number[]>([0, 0, 0, 0, 0]);
   const starEvaluationListTitle: string[] = ["내구성", "가격", "디자인", "배송"];
 
-  const handleStarEvaluationList = (newStarEvluationItem: boolean[], title: string) => {
+  const handleStarEvaluationList = (newStarEvluationItem: number, title: string) => {
     const titleIndex = starEvaluationListTitle.indexOf(title);
     const newStarEvluationList = [...starEvluationList];
     newStarEvluationList[titleIndex] = newStarEvluationItem;
