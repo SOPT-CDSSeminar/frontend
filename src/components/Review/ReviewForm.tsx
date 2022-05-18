@@ -9,6 +9,7 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
 
+import { ICReviewFormCompletionBtn } from "../../asset/icon";
 import ReviewWrite from "./ReviewWrite";
 export default function ReviewForm() {
   const [reviewText, setReviewText] = useState<string>("");
@@ -16,19 +17,25 @@ export default function ReviewForm() {
   const handleReviewText = (newReviewText: string) => {
     setReviewText(newReviewText);
   };
+
+  const handleRevireForm = () => {
+    console.log("리뷰완료");
+  };
   return (
     <StReviewFormhWrapper>
       <StReviewh2>리뷰 작성</StReviewh2>
       <ReviewWrite reviewText={reviewText} handleReviewText={handleReviewText} />
+      <ICReviewFormCompletionBtn onClick={handleRevireForm} />
     </StReviewFormhWrapper>
   );
 }
-const StReviewFormhWrapper = styled.div`
+const StReviewFormhWrapper = styled.section`
   margin: 0rem 1.4rem;
 `;
+
 const StReviewh2 = styled.h2`
   width: 5.3rem;
-  margin: 0rem 1.2rem;
+  margin: 1.2rem 0rem;
   font-family: ${({ theme }) => theme.fonts.ohou_h2};
   color: ${({ theme }) => theme.colors.ohou_gray06};
 `;

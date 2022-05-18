@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import styled, { css } from "styled-components";
+import React, { useRef } from "react";
+import styled from "styled-components";
 
 interface ReviewWriteProps {
   reviewText: string;
@@ -8,9 +8,11 @@ interface ReviewWriteProps {
 export default function ReviewWrite(props: ReviewWriteProps) {
   const { reviewText, handleReviewText } = props;
   const reviewTextRef = useRef<HTMLTextAreaElement>(null);
+  // 리뷰 텍스트 핸들링
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (reviewTextRef.current) {
       reviewTextRef.current.value = e.target.value;
+      console.log(reviewTextRef.current.value.length);
       handleReviewText(reviewTextRef.current.value);
     }
   };
@@ -28,9 +30,10 @@ export default function ReviewWrite(props: ReviewWriteProps) {
 }
 const StReviewWrapper = styled.div`
   position: relative;
+  margin-bottom: 5.1rem;
 `;
 const StInputReviewText = styled.textarea`
-  width: 34.5rem;
+  width: 32.7rem;
   height: 20.4rem;
   padding: 0.7rem;
   border-radius: 0.3rem;
@@ -47,7 +50,7 @@ const StInputReviewText = styled.textarea`
 const StReviewTextCountSpan = styled.span`
   position: absolute;
   bottom: 0.9rem;
-  right: 0.8rem;
+  right: 1.8rem;
   font-family: ${({ theme }) => theme.fonts.ohou_b5};
   color: ${({ theme }) => theme.colors.ohou_gray04};
 `;
