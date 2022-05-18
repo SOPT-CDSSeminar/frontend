@@ -22,6 +22,7 @@ declare module "Styled-components" {
       ohou_b2: string;
       ohou_b3: string;
       ohou_b4: string;
+      ohou_b5: string;
       ohou_small: string;
     };
   }
