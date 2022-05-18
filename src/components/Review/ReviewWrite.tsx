@@ -28,7 +28,7 @@ export default function ReviewWrite(props: ReviewWriteProps) {
     </StReviewWrapper>
   );
 }
-const StReviewWrapper = styled.div`
+const StReviewWrapper = styled.section`
   position: relative;
   margin-bottom: 5.1rem;
 `;
