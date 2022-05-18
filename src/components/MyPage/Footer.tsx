@@ -20,7 +20,7 @@ import {
 } from "../../asset/icon";
 import ImgDnv from "../../asset/image/MyPage/dnvImage.png";
 import { companyInfos, textLinks } from "../../core/mypageFooterInfomations";
-
+import { footerIconList } from "../data/MyPage/footerIconList";
 export default function Footer() {
   return (
     <StFooter>
@@ -31,6 +31,9 @@ export default function Footer() {
       <StCustomSeviceNumber>1670-0876</StCustomSeviceNumber>
       <StOperatingHours>평일 09:00 ~ 18:00 (주말 &#38; 공휴일 제외)</StOperatingHours>
       <StIconLinksWrapper>
+        {/* {footerIconList.map(({ name, icon }) => (
+          <li key={name}>{icon()}</li>
+        ))} */}
         <li>
           <IcApple />
         </li>
