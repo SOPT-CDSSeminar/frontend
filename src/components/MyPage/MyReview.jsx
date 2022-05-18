@@ -16,6 +16,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
+import { ICBlankStar, ICFullStar } from "../../asset/icon";
+
 export default function MyReview() {
   const [products, setProducts] = useState([]);
 
@@ -36,13 +38,20 @@ export default function MyReview() {
         <StBtnLatestOrder>최신순</StBtnLatestOrder>
       </StBtnWrapper>
       {products.map((content, idx) => {
-        const { name, place, size, nickname, date, platform, image, review } = content;
+        const { name, place, size, star, nickname, date, platform, image, review } = content;
         return (
           <StProductCard key={name}>
             <StProductTitle>
               [{place}] {name}
             </StProductTitle>
             <StProductSize>{size}</StProductSize>
+            <StReviewStarWrapper>
+              <ICFullStar />
+              <ICFullStar />
+              <ICFullStar />
+              <ICFullStar />
+              <ICBlankStar />
+            </StReviewStarWrapper>
             <StReviewInfo>
               {nickname} | {date} | {platform} 리뷰
             </StReviewInfo>
@@ -91,13 +100,18 @@ const StProductSize = styled.p`
   width: 6.8rem;
   height: 1.7rem;
 
-  margin-bottom: 2.7rem;
+  margin-bottom: 0.5rem;
 
   font-family: ${({ theme }) => theme.fonts.ohou_b1};
   color: ${({ theme }) => theme.colors.ohou_gray06};
   letter-spacing: -0.04em;
 `;
 
+const StReviewStarWrapper = styled.ul`
+  margin-bottom: 0.3rem;
+
+  display: flex;
+`;
 const StReviewInfo = styled.p`
   width: 20.7rem;
   height: 1.7rem;
