@@ -35,6 +35,6 @@ export default function ReviewForm() {
     </StPhotoAttachWrapper>
   );
 }
-const StPhotoAttachWrapper = styled.div`
+const StPhotoAttachWrapper = styled.section`
   margin: 0rem 1.4rem;
 `;
