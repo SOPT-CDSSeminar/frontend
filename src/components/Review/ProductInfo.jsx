@@ -9,7 +9,6 @@ import styled from "styled-components";
 
 //import { IcProduct } from "../../asset/icon";
 import product from "../../asset/image/Review/productImage.png";
-
 export default function ProductInfo() {
   return (
     <StInfo>
