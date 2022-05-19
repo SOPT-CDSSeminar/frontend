@@ -1,0 +1,12 @@
+#dropdown:checked + label + div {
+  display: block;
+  top: 4.3em;
+
+}
+
+#btn {
+  transition: transform 250ms ease-out;
+}
+#dropdown:checked + label > #btn {
+  transform: rotate(-180deg);
+}
