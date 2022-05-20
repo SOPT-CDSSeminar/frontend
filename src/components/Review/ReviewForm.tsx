@@ -7,7 +7,7 @@
   - 화이팅텡!
 */
 import React, { useRef, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { ICReviewFormCompletionBtn } from "../../asset/icon";
 import PhotoAttach from "./PhotoAttach";
@@ -18,11 +18,22 @@ export default function ReviewForm() {
   const [starEvluationList, setStarEvluationList] = useState<number[]>([0, 0, 0, 0, 0]);
 
   const [reviewText, setReviewText] = useState<string>("");
-  const [isOver, setIsOver] = useState(false);
-  const [isMin, setIsMin] = useState(true);
+  const [isError, setIsError] = useState<boolean>(false);
+  const [errorText, setErrorText] = useState<string>("");
   // const check;
   const handleReviewText = (newReviewText: string) => {
     setReviewText(newReviewText);
+
+    if (reviewText.length < 20) {
+      setErrorText("20자 이상 입력해주세요.");
+      setIsError(true);
+    } else if (20 <= reviewText.length && reviewText.length < 1000) {
+      setErrorText("");
+      setIsError(false);
+    } else {
+      setErrorText("1000자 이하로 입력해주세요.");
+      setIsError(true);
+    }
   };
 
   const handleRevireForm = () => {
@@ -72,16 +83,15 @@ export default function ReviewForm() {
       <PhotoAttach imgFile={imgFile} handleImgFile={handleImgFile} />
 
       <StReviewTitle>
-        <StReviewh2>리뷰 작성</StReviewh2>
-        <StReviewErrorSpan>
-          {isOver ? "1000자 이하로 입력해주세요. " : isMin ? "20자 이상 입력해주세요." : ""}
-        </StReviewErrorSpan>
+        <StReviewErrorh2 isError={isError}>리뷰 작성</StReviewErrorh2>
+        <StReviewErrorSpan>{errorText}</StReviewErrorSpan>
       </StReviewTitle>
-      <ReviewWrite reviewText={reviewText} handleReviewText={handleReviewText} />
+      <ReviewWrite isError={isError} reviewText={reviewText} handleReviewText={handleReviewText} />
       <ICReviewFormCompletionBtn onClick={handleRevireForm} />
     </StReviewFormWrapper>
   );
 }
+
 const StReviewFormWrapper = styled.section`
   margin: 0rem 1.4rem;
 `;
@@ -93,6 +103,16 @@ const StReviewh2 = styled.h2`
   font-family: ${({ theme }) => theme.fonts.ohou_h2};
   text-align: center;
   color: ${({ theme }) => theme.colors.ohou_gray06};
+`;
+const StReviewErrorh2 = styled(StReviewh2)<{ isError: boolean }>`
+  ${({ isError }) =>
+    isError
+      ? css`
+          color: ${({ theme }) => theme.colors.ohou_red};
+        `
+      : css`
+          color: ${({ theme }) => theme.colors.ohou_gray06};
+        `};
 `;
 const StReviewErrorSpan = styled.span`
   margin-left: 0.8rem;

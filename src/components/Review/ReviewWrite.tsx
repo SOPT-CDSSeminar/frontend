@@ -1,28 +1,26 @@
 import React, { useRef } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface ReviewWriteProps {
+  isError: boolean;
   reviewText: string;
   handleReviewText: (newReviewText: string) => void;
 }
 export default function ReviewWrite(props: ReviewWriteProps) {
-  const { reviewText, handleReviewText } = props;
-  const reviewTextRef = useRef<HTMLTextAreaElement>(null);
+  const { isError, reviewText, handleReviewText } = props;
   // 리뷰 텍스트 핸들링
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (reviewTextRef.current) {
-      reviewTextRef.current.value = e.target.value;
-      console.log(reviewTextRef.current.value.length);
-      handleReviewText(reviewTextRef.current.value);
+    if (e.target.value) {
+      handleReviewText(e.target.value);
     }
   };
   return (
     <StReviewWrapper>
       <StInputReviewText
-        ref={reviewTextRef}
         placeholder="자세하고 솔직한 리뷰는 다른 고객에게 큰 도움이 됩니다. (최소 20자 이상)"
         maxLength={1500}
         onChange={handleTextChange}
+        isError={isError}
       />
       <StReviewTextCountSpan>{reviewText.length}</StReviewTextCountSpan>
     </StReviewWrapper>
@@ -32,7 +30,7 @@ const StReviewWrapper = styled.section`
   position: relative;
   margin-bottom: 5.1rem;
 `;
-const StInputReviewText = styled.textarea`
+const StInputReviewText = styled.textarea<{ isError: boolean }>`
   width: 32.7rem;
   height: 20.4rem;
   padding: 0.7rem;
@@ -42,9 +40,17 @@ const StInputReviewText = styled.textarea`
   resize: none;
   font-family: ${({ theme }) => theme.fonts.ohou_b1};
   color: ${({ theme }) => theme.colors.ohou_gray04};
-  &:focus {
-    border: 0.2rem solid ${({ theme }) => theme.colors.ohou_skyblue};
-  }
+
+  ${({ isError }) =>
+    isError
+      ? css`
+          border: 0.2rem solid ${({ theme }) => theme.colors.ohou_red};
+        `
+      : css`
+          &:focus {
+            border: 0.2rem solid ${({ theme }) => theme.colors.ohou_skyblue};
+          }
+        `};
 `;
 
 const StReviewTextCountSpan = styled.span`
