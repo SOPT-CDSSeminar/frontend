@@ -9,9 +9,15 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
 
-import { ICReviewFormCompletionBtn } from "../../asset/icon";
+import PhotoAttach from "./PhotoAttach";
+import StarEvaluationArticle from "./StartEvlauation";
 import ReviewWrite from "./ReviewWrite";
+
+import { ICReviewFormCompletionBtn } from "../../asset/icon";
 export default function ReviewForm() {
+const [imgFile, setImgFile] = useState<File>();
+  const [starEvluationList, setStarEvluationList] = useState<number[]>([0, 0, 0, 0, 0]);
+  
   const [reviewText, setReviewText] = useState<string>("");
   const [isOver, setIsOver] = useState(false);
   const [isMin, setIsMin] = useState(true);
@@ -23,8 +29,53 @@ export default function ReviewForm() {
   const handleRevireForm = () => {
     console.log("리뷰완료");
   };
+  const starEvaluationListTitle: string[] = ["내구성", "가격", "디자인", "배송"];
+  // 이미지 파일 
+  const handleImgFile = (selectImgFile: File) => {
+    setImgFile(selectImgFile);
+  };
+
+  // 파일 업로드 함수
+  const uploadFile = function (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) {
+    const formData = new FormData();
+    if (imgFile) {
+      formData.append("uploadImage", imgFile, imgFile.name);
+      // const config = {
+      //   Header: {
+      //     "content-type": "multipart/form-data",
+      //   },
+      // };
+      // axios.post('', formData, config);
+    }
+  };
+   // 별점 평가 다루는 함수
+  const handleStarEvaluationList = (newStarEvluationItem: number, title: string) => {
+    const titleIndex = starEvaluationListTitle.indexOf(title);
+    const newStarEvluationList = [...starEvluationList];
+    newStarEvluationList[titleIndex] = newStarEvluationItem;
+    setStarEvluationList(newStarEvluationList);
+  };
+  
+  
   return (
-    <StReviewFormhWrapper>
+    <>
+    <StPhotoAttachWrapper>
+      <PhotoAttach imgFile={imgFile} handleImgFile={handleImgFile} />
+    </StPhotoAttachWrapper>
+     <>
+      <StReviewh2>별점 평가</StReviewh2>
+      {starEvaluationListTitle.map((title, index) => {
+        return (
+          <StarEvaluationArticle
+            key={title}
+            title={title}
+            starEvaluation={starEvluationList[index]}
+            handleStarEvaluationList={handleStarEvaluationList}
+          />
+        );
+      })}
+    </>
+      <StReviewFormhWrapper>
       <StReviewTitle>
         <StReviewh2>리뷰 작성</StReviewh2>
         <StReviewErrorSpan>
@@ -34,8 +85,20 @@ export default function ReviewForm() {
       <ReviewWrite reviewText={reviewText} handleReviewText={handleReviewText} />
       <ICReviewFormCompletionBtn onClick={handleRevireForm} />
     </StReviewFormhWrapper>
+    </>
   );
 }
+
+  
+const StPhotoAttachWrapper = styled.section`
+  margin: 0rem 1.4rem;
+`;
+const StReviewh2 = styled.h2`
+  width: 5.3rem;
+  margin: 0rem 1.2rem;
+  font-family: ${({ theme }) => theme.fonts.ohou_h2};
+  color: ${({ theme }) => theme.colors.ohou_gray06};
+`;
 const StReviewFormhWrapper = styled.section`
   margin: 0rem 1.4rem;
 `;
