@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-import product from "../../asset/image/Review/productImage.png";
+import ImgProduct from "../../asset/image/Review/productImage.png";
 export default function ProductInfo() {
   return (
     <StProduct>
       <StProductImg>
-        <img src={product} alt="상품" />
+        <img src={ImgProduct} alt="상품" />
       </StProductImg>
       <StProductDetail>
         <StDetailStore>멜팅스튜디오</StDetailStore>

@@ -34,6 +34,7 @@ export default function ReviewForm() {
   const handleRevireForm = () => {
     console.log("리뷰완료");
   };
+
   const starEvaluationListTitle: string[] = ["내구성", "가격", "디자인", "배송"];
   // 이미지 파일
   const handleImgFile = (selectImgFile: File) => {

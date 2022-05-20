@@ -20,5 +20,4 @@ export { ReactComponent as ICReviewFormCompletionBtn } from "./Review/btn_comple
 export { ReactComponent as ICDeleteBtn } from "./Review/btn_delete.svg";
 export { ReactComponent as IcClose } from "./Review/closeIcon.svg";
 export { ReactComponent as IcDown } from "./Review/downIcon.svg";
-export { ReactComponent as ICPhotoReviewBubble } from "./Review/photoreview_bubble.svg";
 export { ReactComponent as ICReviewStar } from "./Review/starIcon.svg";

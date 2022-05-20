@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-import { ICAttachPhotoBtn, ICDeleteBtn, ICPhotoReviewBubble } from "../../asset/icon";
+import { ICAttachPhotoBtn, ICDeleteBtn } from "../../asset/icon";
+import ImgPhotoReviewBubble from "../../asset/image/Review/photoReviewBubbleImage.png";
 
 interface PhotoAttachProps {
   imgFile?: File;
@@ -40,7 +41,7 @@ export default function PhotoAttach(props: PhotoAttachProps) {
     <StPhotoAttachWrapper>
       <StTitleWrapper>
         <Sth2>사진 첨부 (선택)</Sth2>
-        <ICPhotoReviewBubble />
+        <StImg src={ImgPhotoReviewBubble} alt="포토리뷰 500 포인트" />
       </StTitleWrapper>
 
       <Stb3>사진을 첨부해주세요. (최대 1장)</Stb3>
@@ -73,6 +74,10 @@ const Sth2 = styled.h2`
   text-align: center;
   font-family: ${({ theme }) => theme.fonts.ohou_h2};
   color: ${({ theme }) => theme.colors.ohou_gray06};
+`;
+
+const StImg = styled.img`
+  margin-left: 0.6rem;
 `;
 
 const Stb3 = styled.p`
