@@ -20,3 +20,6 @@ export { ReactComponent as ICFullStar } from "./MyPage/fullstarIcon.svg";
 export { ReactComponent as IcHamburger } from "./MyPage/hamburgerIcon.svg";
 export { ReactComponent as IcLogo } from "./MyPage/logoIcon.svg";
 export { ReactComponent as IcSearch } from "./MyPage/searchIcon.svg";
+export { ReactComponent as IcBanner } from "./Review/bannerImage.svg";
+export { ReactComponent as IcClose } from "./Review/closeIcon.svg";
+export { ReactComponent as IcDown } from "./Review/downIcon.svg";

@@ -1,5 +1,4 @@
 /*
-마지막 편집자: 22-05-15 joohaem
 변경사항 및 참고:
   - 나연 파트
   - 리뷰쓰기 ~ 포인트 배너 작성하기!
@@ -8,6 +7,32 @@
   - 화이텡 ~~
 */
 
+import styled from "styled-components";
+
+import { IcBanner, IcClose } from "../../asset/icon";
+
 export default function Header() {
-  return <div>Header</div>;
+  return (
+    <StHeader>
+      <StNav>
+        <IcClose />
+        <StNavTitle>리뷰쓰기</StNavTitle>
+      </StNav>
+      <IcBanner />
+    </StHeader>
+  );
 }
+
+const StHeader = styled.div``;
+const StNav = styled.nav`
+  display: flex;
+  padding: 0.5rem;
+  position: relative;
+`;
+
+const StNavTitle = styled.p`
+  position: absolute;
+  color: ${({ theme }) => theme.colors.ohou_gray05};
+  ${({ theme }) => theme.fonts.ohou_h1};
+  left: 15.8rem;
+`;

@@ -1,5 +1,4 @@
 /*
-마지막 편집자: 22-05-15 joohaem
 변경사항 및 참고:
   - 나연 파트
   - 오늘의 집 리뷰 정책 부분 구현해주면 돼 !!!~
@@ -7,7 +6,19 @@
   - 거기 토글링에 svg 파일도 180도 돌려주면 UI적으로 더 좋겠지?? (아래 화살표를 위 화살표로)
   - 화이텡!!!
 */
+import styled from "styled-components";
 
+import Footer from "./Footer";
+import ReviewPolicyToggle from "./PolicyToggle";
 export default function ReviewPolicy() {
-  return <div>ReviewPolicy</div>;
+  return (
+    <>
+      <StReviewPolicy>
+        <ReviewPolicyToggle />
+      </StReviewPolicy>
+      <Footer />
+    </>
+  );
 }
+
+const StReviewPolicy = styled.section``;
