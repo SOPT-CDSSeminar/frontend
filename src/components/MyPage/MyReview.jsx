@@ -53,6 +53,7 @@ export default function MyReview() {
 
 const StCardSection = styled.section`
   margin-bottom: 2.4rem;
+  padding: 0 1.4rem;
 
   & > article:not(:last-child) {
     margin-bottom: 3.5rem;
@@ -62,8 +63,7 @@ const StCardSection = styled.section`
 const StBtnWrapper = styled.header`
   display: flex;
 
-  margin-bottom: 7.6rem;
-  margin-top: 5.9rem;
+  margin: 5.9rem 0 7.6rem 1.5rem;
 `;
 
 const StBtnBestOrder = styled.p`
@@ -131,17 +131,13 @@ const StReviewImg = styled.img`
 `;
 
 const StBtnEdit = styled.button`
-  height: 2.1rem;
-
-  margin-top: 0.8rem;
-  margin-left: 32.5rem;
+  width: 4.8rem;
+  height: 4.8rem;
 
   position: absolute;
+  right: 1.4rem;
 
   font-size: 1.2rem;
-  line-height: 2.1rem;
-  /* identical to box height, or 175% */
-  letter-spacing: 0.02em;
 
   color: ${({ theme }) => theme.colors.ohou_gray04};
 `;
