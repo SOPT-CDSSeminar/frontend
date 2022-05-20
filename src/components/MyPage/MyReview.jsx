@@ -32,7 +32,7 @@ export default function MyReview() {
   }, []);
 
   return (
-    <>
+    <StCardSection>
       <StBtnWrapper>
         <StBtnBestOrder>베스트순</StBtnBestOrder>
         <StBtnLatestOrder>최신순</StBtnLatestOrder>
@@ -61,15 +61,23 @@ export default function MyReview() {
           </StProductCard>
         );
       })}
-    </>
+    </StCardSection>
   );
 }
 
-const StBtnWrapper = styled.section`
+const StCardSection = styled.section`
+  margin-bottom: 2.4rem;
+
+  & > article:not(:last-child) {
+    margin-bottom: 3.5rem;
+  }
+`;
+
+const StBtnWrapper = styled.header`
   display: flex;
 
   margin-bottom: 7.6rem;
-  margin-top: 5.9 rem;
+  margin-top: 5.9rem;
 `;
 
 const StBtnBestOrder = styled.p`
@@ -137,7 +145,6 @@ const StReviewImg = styled.img`
 `;
 
 const StBtnEdit = styled.button`
-  width: 2.3rem;
   height: 2.1rem;
 
   margin-top: 0.8rem;
@@ -145,9 +152,6 @@ const StBtnEdit = styled.button`
 
   position: absolute;
 
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 400;
   font-size: 1.2rem;
   line-height: 2.1rem;
   /* identical to box height, or 175% */
