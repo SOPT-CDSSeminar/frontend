@@ -64,7 +64,9 @@ export default function ReviewForm() {
 
   return (
     <StReviewFormWrapper>
-      <StReviewh2>별점 평가</StReviewh2>
+      <StReviewTitle>
+        <StReviewh2>별점 평가</StReviewh2>
+      </StReviewTitle>
       {starEvaluationListTitle.map((title, index) => {
         return (
           <StarEvaluationArticle
@@ -91,15 +93,18 @@ export default function ReviewForm() {
 const StReviewFormWrapper = styled.section`
   margin: 0rem 1.4rem;
 `;
+
 const StReviewTitle = styled.div`
   margin-bottom: 1.5rem;
 `;
+
 const StReviewh2 = styled.h2`
   display: inline;
-  font-family: ${({ theme }) => theme.fonts.ohou_h2};
-  text-align: center;
+
+  ${({ theme }) => theme.fonts.ohou_h2};
   color: ${({ theme }) => theme.colors.ohou_gray06};
 `;
+
 const StReviewErrorh2 = styled(StReviewh2)<{ isError: boolean }>`
   ${({ isError }) =>
     isError
@@ -110,6 +115,7 @@ const StReviewErrorh2 = styled(StReviewh2)<{ isError: boolean }>`
           color: ${({ theme }) => theme.colors.ohou_gray06};
         `};
 `;
+
 const StReviewErrorSpan = styled.span`
   margin-left: 0.8rem;
   font-family: ${({ theme }) => theme.fonts.ohou_b5};
