@@ -67,12 +67,12 @@ const StBtnWrapper = styled.header`
 `;
 
 const StBtnBestOrder = styled.p`
-  font-family: ${({ theme }) => theme.fonts.ohou_h3};
+  ${({ theme }) => theme.fonts.ohou_h3};
   color: ${({ theme }) => theme.colors.ohou_gray06};
 `;
 
 const StBtnLatestOrder = styled.p`
-  font-family: ${({ theme }) => theme.fonts.ohou_h3};
+  ${({ theme }) => theme.fonts.ohou_h3};
   color: ${({ theme }) => theme.colors.ohou_skyblue};
 
   margin-left: 3.5rem;
@@ -87,7 +87,7 @@ const StProductCard = styled.article`
 const StProductTitle = styled.p`
   margin-bottom: 0.4rem;
 
-  font-family: ${({ theme }) => theme.fonts.ohou_h2};
+  ${({ theme }) => theme.fonts.ohou_h2};
   color: ${({ theme }) => theme.colors.ohou_gray06};
   letter-spacing: -0.04em;
 `;
@@ -98,7 +98,7 @@ const StProductSize = styled.p`
 
   margin-bottom: 0.5rem;
 
-  font-family: ${({ theme }) => theme.fonts.ohou_b1};
+  ${({ theme }) => theme.fonts.ohou_b1};
   color: ${({ theme }) => theme.colors.ohou_gray06};
   letter-spacing: -0.04em;
 `;
@@ -114,12 +114,12 @@ const StReviewInfo = styled.p`
 
   margin-bottom: 1.2rem;
 
-  font-family: ${({ theme }) => theme.fonts.ohou_b3};
+  ${({ theme }) => theme.fonts.ohou_b3};
   color: ${({ theme }) => theme.colors.ohou_gray04};
 `;
 
 const StReviewText = styled.p`
-  font-family: ${({ theme }) => theme.fonts.ohou_b2};
+  ${({ theme }) => theme.fonts.ohou_b2};
   color: ${({ theme }) => theme.colors.ohou_gray06};
 `;
 

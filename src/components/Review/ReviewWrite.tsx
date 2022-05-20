@@ -38,7 +38,7 @@ const StInputReviewText = styled.textarea<{ isError: boolean }>`
   border: 0.1rem solid ${({ theme }) => theme.colors.ohou_gray03};
   outline: none;
   resize: none;
-  font-family: ${({ theme }) => theme.fonts.ohou_b1};
+  ${({ theme }) => theme.fonts.ohou_b1};
   color: ${({ theme }) => theme.colors.ohou_gray04};
 
   ${({ isError }) =>
@@ -57,6 +57,6 @@ const StReviewTextCountSpan = styled.span`
   position: absolute;
   bottom: 0.9rem;
   right: 1.8rem;
-  font-family: ${({ theme }) => theme.fonts.ohou_b5};
+  ${({ theme }) => theme.fonts.ohou_b5};
   color: ${({ theme }) => theme.colors.ohou_gray04};
 `;

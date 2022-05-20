@@ -119,7 +119,7 @@ const StReviewErrorh2 = styled(StReviewh2)<{ isError: boolean }>`
 
 const StReviewErrorSpan = styled.span`
   margin-left: 0.8rem;
-  font-family: ${({ theme }) => theme.fonts.ohou_b5};
+  ${({ theme }) => theme.fonts.ohou_b5};
   color: ${({ theme }) => theme.colors.ohou_red};
   text-align: center;
 `;

@@ -72,7 +72,7 @@ const StTitleWrapper = styled.div`
 
 const Sth2 = styled.h2`
   text-align: center;
-  font-family: ${({ theme }) => theme.fonts.ohou_h2};
+  ${({ theme }) => theme.fonts.ohou_h2};
   color: ${({ theme }) => theme.colors.ohou_gray06};
 `;
 
@@ -81,17 +81,18 @@ const StImg = styled.img`
 `;
 
 const Stb3 = styled.p`
-  width: 15rem;
   margin: 1rem 0rem 0.8rem;
-  font-family: ${({ theme }) => theme.fonts.ohou_b3};
+  ${({ theme }) => theme.fonts.ohou_b3};
   color: ${({ theme }) => theme.colors.ohou_gray04};
 `;
 
 const StPhotoInputWrapper = styled.div`
   margin-bottom: 3.9rem;
+
   & label {
     cursor: pointer;
   }
+
   & input[type="file"] {
     position: absolute;
     width: 34.5rem;
