@@ -1,4 +1,4 @@
-export { ReactComponent as ICBlankStar } from "./MyPage/blankstarIcon.svg";
+export { ReactComponent as ICBlankStar } from "./MyPage/blankstarIcon_small.svg";
 export { ReactComponent as IcCart } from "./MyPage/cartIcon.svg";
 export { ReactComponent as IcApple } from "./MyPage/footer/appleIcon.svg";
 export { ReactComponent as IcArrow } from "./MyPage/footer/arrowIcon.svg";
@@ -9,7 +9,7 @@ export { ReactComponent as IcInstargram } from "./MyPage/footer/instargramIcon.s
 export { ReactComponent as IcIsms } from "./MyPage/footer/ismsIcon.svg";
 export { ReactComponent as IcKakaostory } from "./MyPage/footer/kakaostoryIcon.svg";
 export { ReactComponent as IcNaver } from "./MyPage/footer/naverIcon.svg";
-export { ReactComponent as ICFullStar } from "./MyPage/fullstarIcon.svg";
+export { ReactComponent as ICFullStar } from "./MyPage/fullstarIcon_small.svg";
 export { ReactComponent as IcHamburger } from "./MyPage/hamburgerIcon.svg";
 export { ReactComponent as IcLogo } from "./MyPage/logoIcon.svg";
 export { ReactComponent as IcSearch } from "./MyPage/searchIcon.svg";
