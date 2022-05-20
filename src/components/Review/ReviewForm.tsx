@@ -25,10 +25,12 @@ export default function ReviewForm() {
   };
   return (
     <StReviewFormhWrapper>
-      <StReviewh2>리뷰 작성</StReviewh2>
-      <StReviewErrorSpan>
-        {isOver ? "1000자 이하로 입력해주세요. " : isMin ? "20자 이상 입력해주세요." : ""}
-      </StReviewErrorSpan>
+      <StReviewTitle>
+        <StReviewh2>리뷰 작성</StReviewh2>
+        <StReviewErrorSpan>
+          {isOver ? "1000자 이하로 입력해주세요. " : isMin ? "20자 이상 입력해주세요." : ""}
+        </StReviewErrorSpan>
+      </StReviewTitle>
       <ReviewWrite reviewText={reviewText} handleReviewText={handleReviewText} />
       <ICReviewFormCompletionBtn onClick={handleRevireForm} />
     </StReviewFormhWrapper>
@@ -37,15 +39,20 @@ export default function ReviewForm() {
 const StReviewFormhWrapper = styled.section`
   margin: 0rem 1.4rem;
 `;
-
+const StReviewTitle = styled.div`
+  margin-bottom: 1.5rem;
+`;
 const StReviewh2 = styled.h2`
   display: inline;
   width: 5.3rem;
   margin: 1.2rem 0rem;
   font-family: ${({ theme }) => theme.fonts.ohou_h2};
+  text-align: center;
   color: ${({ theme }) => theme.colors.ohou_gray06};
 `;
 const StReviewErrorSpan = styled.span`
+  margin-left: 0.8rem;
   font-family: ${({ theme }) => theme.fonts.ohou_b5};
   color: ${({ theme }) => theme.colors.ohou_red};
+  text-align: center;
 `;
