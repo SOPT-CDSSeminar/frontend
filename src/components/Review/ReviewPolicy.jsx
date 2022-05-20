@@ -8,15 +8,17 @@
 */
 import styled from "styled-components";
 
-import Stfooter from "./footer";
+import Footer from "./Footer";
 import ReviewPolicyToggle from "./PolicyToggle";
 export default function ReviewPolicy() {
   return (
-    <StReviewPolicy>
-      <ReviewPolicyToggle />
-      <Stfooter />
-    </StReviewPolicy>
+    <>
+      <StReviewPolicy>
+        <ReviewPolicyToggle />
+      </StReviewPolicy>
+      <Footer />
+    </>
   );
 }
 
-const StReviewPolicy = styled.div``;
+const StReviewPolicy = styled.section``;

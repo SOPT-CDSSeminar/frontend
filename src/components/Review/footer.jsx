@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function footer() {
+export default function Footer() {
   return (
     <StFooter>
       <StReviewDescription>
@@ -14,10 +14,10 @@ export default function footer() {
 const StFooter = styled.div`
   background-color: ${({ theme }) => theme.colors.ohou_gray01};
   height: 86px;
-  margin-top: 3em;
+  margin-top: 3rem;
   position: relative;
-  border-top: 0.15em;
-  border-bottom: 0.15em;
+  border-top: 0.15rem;
+  border-bottom: 0.15rem;
   border-style: solid;
   border-color: ${({ theme }) => theme.colors.ohou_gray02};
 `;
@@ -26,7 +26,7 @@ const StReviewDescription = styled.p`
   ${({ theme }) => theme.fonts.ohou_b3};
   color: ${({ theme }) => theme.colors.ohou_gray05};
   position: absolute;
-  font-family: "Noto Sans KR";
-  top: 1.5em;
-  left: 1.4em;
+  top: 1.5rem;
+  left: 1.4rem;
+  right: 1.2rem;
 `;

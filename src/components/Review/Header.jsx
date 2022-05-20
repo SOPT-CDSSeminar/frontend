@@ -32,8 +32,7 @@ const StNav = styled.nav`
 
 const StNavTitle = styled.p`
   position: absolute;
+  color: ${({ theme }) => theme.colors.ohou_gray05};
   ${({ theme }) => theme.fonts.ohou_h1};
-  color: #424242;
-  font-family: "Noto Sans KR";
   left: 15.8rem;
 `;

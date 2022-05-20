@@ -21,4 +21,3 @@ export { ReactComponent as IcSearch } from "./MyPage/searchIcon.svg";
 export { ReactComponent as IcBanner } from "./Review/bannerImage.svg";
 export { ReactComponent as IcClose } from "./Review/closeIcon.svg";
 export { ReactComponent as IcDown } from "./Review/downIcon.svg";
-export { ReactComponent as IcProduct } from "./Review/productIcon.svg";

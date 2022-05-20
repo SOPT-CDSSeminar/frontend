@@ -6,7 +6,6 @@
 */
 import styled from "styled-components";
 
-//import { IcProduct } from "../../asset/icon";
 import product from "../../asset/image/Review/productImage.png";
 export default function ProductInfo() {
   return (
@@ -29,28 +28,25 @@ const StProduct = styled.div`
 `;
 const StProductImg = styled.div``;
 const StProductDetail = styled.div`
-  margin-left: 1.1em;
-  margin-top: 0.9em;
+  margin-left: 1.1rem;
+  margin-top: 0.9rem;
 `;
 
 const StDetailStore = styled.p`
-  font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;
-  font-size: 1em;
-  line-height: 1.4em;
-  letter-spacing: -0.04em;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  letter-spacing: -0.04rem;
   color: ${({ theme }) => theme.colors.ohou_gray04};
-  margin-bottom: 0.2em;
+  margin-bottom: 0.2rem;
 `;
 const StDetailTitle = styled.p`
-  ${({ theme }) => theme.fonts.ohou_b1};
   color: ${({ theme }) => theme.colors.ohou_gray05};
-  font-family: "Noto Sans KR";
-  margin-bottom: 0.4em;
+  ${({ theme }) => theme.fonts.ohou_b1};
+  margin-bottom: 0.4rem;
 `;
 const StDetailSize = styled.p`
   ${({ theme }) => theme.fonts.ohou_b4};
   color: ${({ theme }) => theme.colors.ohou_gray04};
-  font-family: "Noto Sans KR";
 `;

@@ -13,8 +13,9 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans KR', sans-serif;
     box-sizing: border-box;
   } 
-
+  
   html {
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 62.5%;
     font-size: 62.5%;
     letter-spacing: -0.03rem;
