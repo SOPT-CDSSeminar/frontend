@@ -49,7 +49,7 @@ const StStarEvaluationB1 = styled.span`
   color: ${({ theme }) => theme.colors.ohou_gray06};
 `;
 
-const StICStar = styled(({ isFull: boolean, ...props }) => <ICReviewStar {...props} />)`
+const StICStar = styled(({ isFull, ...props }) => <ICReviewStar {...props} />)`
   ${({ isFull }) =>
     isFull
       ? css`

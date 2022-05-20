@@ -11,7 +11,9 @@ export default function ReviewPolicyToggle() {
       <StToggleLabel htmlFor="dropdown" onClick={() => setIsToggleLabel((prev) => !prev)}>
         <StPolicyToggleTitle>오늘의 집 리뷰 정책</StPolicyToggleTitle>
         <StPolicyToggleBtn id="btn">
-          <StIcDown isToggleLabel={isToggleLabel} />
+          <StIcDownWrapper isToggleLabel={isToggleLabel}>
+            <StIcDown />
+          </StIcDownWrapper>
         </StPolicyToggleBtn>
       </StToggleLabel>
       {isToggleLabel && (
@@ -67,10 +69,12 @@ const StPlicyToggleContents = styled.div`
   color: ${({ theme }) => theme.colors.ohou_gray05};
 `;
 
-const StIcDown = styled(IcDown)`
+const StIcDownWrapper = styled.div`
   ${({ isToggleLabel }) =>
     isToggleLabel &&
     css`
       transform: rotate(-180deg);
     `}
 `;
+
+const StIcDown = styled(IcDown)``;
