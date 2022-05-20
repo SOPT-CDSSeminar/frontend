@@ -10,12 +10,11 @@ export const GlobalStyle = createGlobalStyle`
   ${reset}
 
   * {
-    font-family: 'Noto Sans KR', sans-serif;
     box-sizing: border-box;
   } 
-
+  
   html {
-    font-size: 62.5%;
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 62.5%;
     letter-spacing: -0.03rem;
 

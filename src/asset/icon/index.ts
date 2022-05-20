@@ -8,8 +8,8 @@
 export { ReactComponent as ICBlankStar } from "./MyPage/blankstarIcon.svg";
 export { ReactComponent as IcCart } from "./MyPage/cartIcon.svg";
 export { ReactComponent as IcApple } from "./MyPage/footer/appleIcon.svg";
+export { ReactComponent as IcArrow } from "./MyPage/footer/arrowIcon.svg";
 export { ReactComponent as IcBlog } from "./MyPage/footer/blogIcon.svg";
-export { ReactComponent as IcDnv } from "./MyPage/footer/dnvIcon.svg";
 export { ReactComponent as IcFacebook } from "./MyPage/footer/facebookIcon.svg";
 export { ReactComponent as IcGoogleplay } from "./MyPage/footer/googleplayIcon.svg";
 export { ReactComponent as IcInstargram } from "./MyPage/footer/instargramIcon.svg";
