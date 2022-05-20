@@ -34,11 +34,12 @@ export default function PhotoAttach(props: PhotoAttachProps) {
   };
 
   return (
-    <>
-      <StPhotoAttachWrapper>
+    <StPhotoAttachWrapper>
+      <StTitleWrapper>
         <Sth2>사진 첨부 (선택)</Sth2>
         <ICPhotoReviewBubble />
-      </StPhotoAttachWrapper>
+      </StTitleWrapper>
+
       <Stb3>사진을 첨부해주세요. (최대 1장)</Stb3>
       <StImageWrapper isAttach={Boolean(imgBase64)}>
         <p>
@@ -52,16 +53,17 @@ export default function PhotoAttach(props: PhotoAttachProps) {
         </label>
         <input id="photoFile" type="file" onChange={handleImageChange} />
       </StPhotoInputWrapper>
-    </>
+    </StPhotoAttachWrapper>
   );
 }
 const StPhotoAttachWrapper = styled.div`
+  margin-top: 2.2rem;
+`;
+const StTitleWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
-const Sth2 = styled.span`
-  width: 9rem;
-  margin-right: 0.3rem;
+const Sth2 = styled.h2`
   text-align: center;
   font-family: ${({ theme }) => theme.fonts.ohou_h2};
   color: ${({ theme }) => theme.colors.ohou_gray06};
@@ -73,7 +75,8 @@ const Stb3 = styled.p`
   color: ${({ theme }) => theme.colors.ohou_gray04};
 `;
 
-const StPhotoInputWrapper = styled(StPhotoAttachWrapper)`
+const StPhotoInputWrapper = styled.div`
+  margin-bottom: 3.9rem;
   & label {
     cursor: pointer;
   }

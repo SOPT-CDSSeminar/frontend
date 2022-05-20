@@ -45,7 +45,6 @@ const StStarEvaluationWrapper = styled.article`
 
 const StStarEvaluationB1 = styled.span`
   width: 4rem;
-  margin: 0rem 1.2rem;
   font-family: ${({ theme }) => theme.fonts.ohou_b1};
   color: ${({ theme }) => theme.colors.ohou_gray06};
 `;

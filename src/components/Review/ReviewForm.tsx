@@ -9,7 +9,7 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
 
-// import { ICReviewFormCompletionBtn } from "../../asset/icon";
+import { ICReviewFormCompletionBtn } from "../../asset/icon";
 import PhotoAttach from "./PhotoAttach";
 import ReviewWrite from "./ReviewWrite";
 import StarEvaluationArticle from "./StartEvlauation";
@@ -56,57 +56,33 @@ export default function ReviewForm() {
   };
 
   return (
-    <>
-      <>
-        <StReviewh2>별점 평가</StReviewh2>
-        {starEvaluationListTitle.map((title, index) => {
-          return (
-            <StarEvaluationArticle
-              key={title}
-              title={title}
-              starEvaluation={starEvluationList[index]}
-              handleStarEvaluationList={handleStarEvaluationList}
-            />
-          );
-        })}
-      </>
-      <StPhotoAttachWrapper>
-        <PhotoAttach imgFile={imgFile} handleImgFile={handleImgFile} />
-      </StPhotoAttachWrapper>
-      <StPhotoAttachWrapper>
-        <PhotoAttach imgFile={imgFile} handleImgFile={handleImgFile} />
-      </StPhotoAttachWrapper>
-      <>
-        <StReviewh2>별점 평가</StReviewh2>
-        {starEvaluationListTitle.map((title, index) => {
-          return (
-            <StarEvaluationArticle
-              key={title}
-              title={title}
-              starEvaluation={starEvluationList[index]}
-              handleStarEvaluationList={handleStarEvaluationList}
-            />
-          );
-        })}
-      </>
-      <StReviewFormhWrapper>
-        <StReviewTitle>
-          <StReviewh2>리뷰 작성</StReviewh2>
-          <StReviewErrorSpan>
-            {isOver ? "1000자 이하로 입력해주세요. " : isMin ? "20자 이상 입력해주세요." : ""}
-          </StReviewErrorSpan>
-        </StReviewTitle>
-        <ReviewWrite reviewText={reviewText} handleReviewText={handleReviewText} />
-        {/* <ICReviewFormCompletionBtn onClick={handleRevireForm} /> */}
-      </StReviewFormhWrapper>
-    </>
+    <StReviewFormWrapper>
+      <StReviewh2>별점 평가</StReviewh2>
+      {starEvaluationListTitle.map((title, index) => {
+        return (
+          <StarEvaluationArticle
+            key={title}
+            title={title}
+            starEvaluation={starEvluationList[index]}
+            handleStarEvaluationList={handleStarEvaluationList}
+          />
+        );
+      })}
+
+      <PhotoAttach imgFile={imgFile} handleImgFile={handleImgFile} />
+
+      <StReviewTitle>
+        <StReviewh2>리뷰 작성</StReviewh2>
+        <StReviewErrorSpan>
+          {isOver ? "1000자 이하로 입력해주세요. " : isMin ? "20자 이상 입력해주세요." : ""}
+        </StReviewErrorSpan>
+      </StReviewTitle>
+      <ReviewWrite reviewText={reviewText} handleReviewText={handleReviewText} />
+      <ICReviewFormCompletionBtn onClick={handleRevireForm} />
+    </StReviewFormWrapper>
   );
 }
-
-const StPhotoAttachWrapper = styled.section`
-  margin: 0rem 1.4rem;
-`;
-const StReviewFormhWrapper = styled.section`
+const StReviewFormWrapper = styled.section`
   margin: 0rem 1.4rem;
 `;
 const StReviewTitle = styled.div`
@@ -114,8 +90,6 @@ const StReviewTitle = styled.div`
 `;
 const StReviewh2 = styled.h2`
   display: inline;
-  width: 5.3rem;
-  margin: 1.2rem 0rem;
   font-family: ${({ theme }) => theme.fonts.ohou_h2};
   text-align: center;
   color: ${({ theme }) => theme.colors.ohou_gray06};
