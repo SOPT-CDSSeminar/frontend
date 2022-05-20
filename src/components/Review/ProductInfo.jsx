@@ -1,9 +1,3 @@
-/*
-변경사항 및 참고:
-  - 나연 파트
-  - 멜팅스튜디오 정보 있는 그 블록 UI 구성해주면 됩니당당
-  - 화이텡 ~~
-*/
 import styled from "styled-components";
 
 import product from "../../asset/image/Review/productImage.png";

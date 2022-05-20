@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import reset from "styled-reset";
+import { reset } from "styled-reset";
 
 import App from "./App";
 import theme from "./style/theme";

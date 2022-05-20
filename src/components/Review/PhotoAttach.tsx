@@ -2,17 +2,20 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 import { ICAttachPhotoBtn, ICDeleteBtn, ICPhotoReviewBubble } from "../../asset/icon";
+
 interface PhotoAttachProps {
   imgFile?: File;
   handleImgFile: (selectImgFile: File) => void;
 }
+
 export default function PhotoAttach(props: PhotoAttachProps) {
-  const { imgFile, handleImgFile } = props;
+  const { handleImgFile } = props;
   const [imgBase64, setImgBase64] = useState<string>("");
 
   const handleDeleteBtn = () => {
     setImgBase64("");
   };
+
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
@@ -56,18 +59,22 @@ export default function PhotoAttach(props: PhotoAttachProps) {
     </StPhotoAttachWrapper>
   );
 }
+
 const StPhotoAttachWrapper = styled.div`
   margin-top: 2.2rem;
 `;
+
 const StTitleWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
+
 const Sth2 = styled.h2`
   text-align: center;
   font-family: ${({ theme }) => theme.fonts.ohou_h2};
   color: ${({ theme }) => theme.colors.ohou_gray06};
 `;
+
 const Stb3 = styled.p`
   width: 15rem;
   margin: 1rem 0rem 0.8rem;
@@ -91,6 +98,7 @@ const StPhotoInputWrapper = styled.div`
     border: 0;
   }
 `;
+
 const StImageWrapper = styled.div<{ isAttach: boolean }>`
   display: none;
   position: relative;

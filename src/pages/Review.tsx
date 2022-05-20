@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import Footer from "../components/Review/Footer";
 import Header from "../components/Review/Header";
 import ProductInfo from "../components/Review/ProductInfo";
 import ReviewForm from "../components/Review/ReviewForm";
@@ -12,6 +13,7 @@ export default function Review() {
       <ProductInfo />
       <ReviewForm />
       <ReviewPolicy />
+      <Footer />
     </StMainWrapper>
   );
 }

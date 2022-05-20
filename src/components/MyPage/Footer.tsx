@@ -20,7 +20,7 @@ import {
 } from "../../asset/icon";
 import ImgDnv from "../../asset/image/MyPage/dnvImage.png";
 import { companyInfos, textLinks } from "../../core/mypageFooterInfomations";
-import { footerIconList } from "../data/MyPage/footerIconList";
+
 export default function Footer() {
   return (
     <StFooter>
