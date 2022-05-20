@@ -9,6 +9,7 @@ const colors = {
   ohou_gray05: "#424242",
   ohou_gray06: "#292929",
   ohou_black: "#000000",
+  ohou_red: "#EE7F7B",
 };
 
 const fonts = {

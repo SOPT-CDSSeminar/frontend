@@ -1,10 +1,3 @@
-/*
-마지막 편집자: 22-05-16 joohaem
-변경사항 및 참고:
-  - 1. 위 양식대로 추가한다
-  - 2. 컴포넌트에서 <IcSearch /> 로 불러와서 사용한다 !!!!
-*/
-
 export { ReactComponent as ICBlankStar } from "./MyPage/blankstarIcon.svg";
 export { ReactComponent as IcCart } from "./MyPage/cartIcon.svg";
 export { ReactComponent as IcApple } from "./MyPage/footer/appleIcon.svg";
@@ -20,6 +13,12 @@ export { ReactComponent as ICFullStar } from "./MyPage/fullstarIcon.svg";
 export { ReactComponent as IcHamburger } from "./MyPage/hamburgerIcon.svg";
 export { ReactComponent as IcLogo } from "./MyPage/logoIcon.svg";
 export { ReactComponent as IcSearch } from "./MyPage/searchIcon.svg";
+export { ReactComponent as ICAttachPhoto } from "./Review/attach_photo.svg";
 export { ReactComponent as IcBanner } from "./Review/bannerImage.svg";
+export { ReactComponent as ICAttachPhotoBtn } from "./Review/btn_attach_photo.svg";
+export { ReactComponent as ICReviewFormCompletionBtn } from "./Review/btn_completion.svg";
+export { ReactComponent as ICDeleteBtn } from "./Review/btn_delete.svg";
 export { ReactComponent as IcClose } from "./Review/closeIcon.svg";
 export { ReactComponent as IcDown } from "./Review/downIcon.svg";
+export { ReactComponent as ICPhotoReviewBubble } from "./Review/photoreview_bubble.svg";
+export { ReactComponent as ICReviewStar } from "./Review/starIcon.svg";

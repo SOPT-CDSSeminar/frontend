@@ -12,6 +12,7 @@ declare module "styled-components" {
       ohou_gray05: string;
       ohou_gray06: string;
       ohou_black: string;
+      ohou_red: string;
     };
     fonts: {
       ohou_h1: string;
@@ -22,6 +23,7 @@ declare module "styled-components" {
       ohou_b2: string;
       ohou_b3: string;
       ohou_b4: string;
+      ohou_b5: string;
       ohou_small: string;
     };
   }
