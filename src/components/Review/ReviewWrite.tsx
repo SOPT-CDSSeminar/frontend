@@ -14,6 +14,7 @@ export default function ReviewWrite(props: ReviewWriteProps) {
       handleReviewText(e.target.value);
     }
   };
+
   return (
     <StReviewWrapper>
       <StInputReviewText
@@ -31,15 +32,24 @@ const StReviewWrapper = styled.section`
   margin-bottom: 5.1rem;
 `;
 const StInputReviewText = styled.textarea<{ isError: boolean }>`
-  width: 32.7rem;
-  height: 20.4rem;
+  width: 100%;
+  min-height: 10.1rem;
+
   padding: 0.7rem;
+
   border-radius: 0.3rem;
   border: 0.1rem solid ${({ theme }) => theme.colors.ohou_gray03};
+
   outline: none;
   resize: none;
+
   ${({ theme }) => theme.fonts.ohou_b1};
   color: ${({ theme }) => theme.colors.ohou_gray04};
+
+  &::placeholder {
+    ${({ theme }) => theme.fonts.ohou_b1};
+    color: ${({ theme }) => theme.colors.ohou_gray03};
+  }
 
   ${({ isError }) =>
     isError

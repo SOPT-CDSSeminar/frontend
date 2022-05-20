@@ -92,7 +92,7 @@ export default function ReviewForm() {
 }
 
 const StReviewFormWrapper = styled.section`
-  margin: 0rem 1.4rem;
+  margin: 0rem 1.4rem 3rem;
 `;
 
 const StReviewTitle = styled.div`
