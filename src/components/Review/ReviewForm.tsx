@@ -9,20 +9,47 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+import PhotoAttach from "./PhotoAttach";
 import StarEvaluationArticle from "./StartEvlauation";
 
 export default function ReviewForm() {
+  const [imgFile, setImgFile] = useState<File>();
   const [starEvluationList, setStarEvluationList] = useState<number[]>([0, 0, 0, 0, 0]);
+  
   const starEvaluationListTitle: string[] = ["내구성", "가격", "디자인", "배송"];
+  // 이미지 파일 
+  const handleImgFile = (selectImgFile: File) => {
+    setImgFile(selectImgFile);
+  };
 
+  // 파일 업로드 함수
+  const uploadFile = function (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) {
+    const formData = new FormData();
+    if (imgFile) {
+      formData.append("uploadImage", imgFile, imgFile.name);
+      // const config = {
+      //   Header: {
+      //     "content-type": "multipart/form-data",
+      //   },
+      // };
+      // axios.post('', formData, config);
+    }
+  };
+   // 별점 평가 다루는 함수
   const handleStarEvaluationList = (newStarEvluationItem: number, title: string) => {
     const titleIndex = starEvaluationListTitle.indexOf(title);
     const newStarEvluationList = [...starEvluationList];
     newStarEvluationList[titleIndex] = newStarEvluationItem;
     setStarEvluationList(newStarEvluationList);
   };
+  
+  
   return (
     <>
+    <StPhotoAttachWrapper>
+      <PhotoAttach imgFile={imgFile} handleImgFile={handleImgFile} />
+    </StPhotoAttachWrapper>
+     <>
       <StReviewh2>별점 평가</StReviewh2>
       {starEvaluationListTitle.map((title, index) => {
         return (
@@ -35,11 +62,17 @@ export default function ReviewForm() {
         );
       })}
     </>
+      </>
   );
 }
+
+const StPhotoAttachWrapper = styled.section`
+  margin: 0rem 1.4rem;
+`;
 const StReviewh2 = styled.h2`
   width: 5.3rem;
   margin: 0rem 1.2rem;
   font-family: ${({ theme }) => theme.fonts.ohou_h2};
   color: ${({ theme }) => theme.colors.ohou_gray06};
+
 `;
