@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import { ICReviewFormCompletionBtn } from "../../asset/icon";
 import PhotoAttach from "./PhotoAttach";
 import ReviewWrite from "./ReviewWrite";
-import StarEvaluationArticle from "./StartEvlauation";
+import StarEvaluationArticle from "./StartEvaluation";
 
 export default function ReviewForm() {
   const [imgFile, setImgFile] = useState<File>();
