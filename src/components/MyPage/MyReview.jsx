@@ -79,6 +79,8 @@ const StBtnLatestOrder = styled.p`
 `;
 
 const StProductCard = styled.article`
+  position: relative;
+
   display: block;
 `;
 
