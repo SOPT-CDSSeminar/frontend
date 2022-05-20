@@ -8,7 +8,7 @@
 */
 import styled from "styled-components";
 
-import Footer from "./Footer";
+import Footer from "../MyPage/Footer";
 import ReviewPolicyToggle from "./PolicyToggle";
 export default function ReviewPolicy() {
   return (
