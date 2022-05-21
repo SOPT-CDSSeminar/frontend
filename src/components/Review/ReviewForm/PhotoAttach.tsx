@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-import { ICAttachPhotoBtn, ICDeleteBtn } from "../../asset/icon";
-import ImgPhotoReviewBubble from "../../asset/image/Review/photoReviewBubbleImage.png";
+import { ICAttachPhotoBtn, ICDeleteBtn } from "../../../asset/icon";
+import ImgPhotoReviewBubble from "../../../asset/image/Review/photoReviewBubbleImage.png";
 
 interface PhotoAttachProps {
   imgFile?: File;

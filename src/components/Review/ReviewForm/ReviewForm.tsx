@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-import { ICReviewFormCompletionBtn } from "../../asset/icon";
+import { ICReviewFormCompletionBtn } from "../../../asset/icon";
 import PhotoAttach from "./PhotoAttach";
 import ReviewWrite from "./ReviewWrite";
 import StarEvaluationArticle from "./StartEvaluation";
@@ -15,7 +15,7 @@ export default function ReviewForm() {
   const [errorText, setErrorText] = useState<string>("");
 
   // const check;
-
+  // 리뷰 텍스트
   const handleReviewText = (newReviewText: string) => {
     setReviewText(newReviewText);
 
@@ -31,6 +31,7 @@ export default function ReviewForm() {
     }
   };
 
+  // 완료 버튼
   const handleRevireForm = () => {
     console.log("리뷰완료");
   };

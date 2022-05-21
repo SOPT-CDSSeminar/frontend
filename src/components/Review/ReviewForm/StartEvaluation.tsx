@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 
-import { ICReviewStar } from "../../asset/icon";
+import { ICReviewStar } from "../../../asset/icon";
 
 interface StarEvaluationArticleProps {
   title: string;
