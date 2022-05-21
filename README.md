@@ -29,7 +29,7 @@
 |👩‍💻 개발자 | 역할 | github |
 |------|---|---|
 | 홍서희| 리뷰 쓰기 / form data CREATE & UPDATE 구현| [@Happhee](https://github.com/Happhee) |
-| 고나연 |리뷰 쓰기 / header 및 footer 구현| |[@NYeonK](https://github.com/NYeonK) |
+| 고나연 |리뷰 쓰기 / header 및 footer 구현| [@NYeonK](https://github.com/NYeonK) |
 | 주송아| 마이페이지 / data list READ 구현|  [@songah119](https://github.com/songah119) |
 | 이주함 | 마이페이지 / header 및 footer 구현|  [@joohaem](https://github.com/joohaem) |
 
