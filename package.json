@@ -7,7 +7,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server mock-data.json --watch --port 4000",
+    "server": "json-server data.json --watch --port 4000",
     "lint": "yarn run lint-prettier && yarn run lint-eslint",
     "lint-eslint": "eslint --ignore-path .gitignore src/**/*{ts,tsx} --fix",
     "lint-prettier": "prettier --write \"src/**/*.(ts|tsx)\""
