@@ -14,6 +14,16 @@ export default function MyReview() {
     setProducts(result.data);
   }
 
+  function getStarPercentageWithAverage(idx, _totalAverage) {
+    if (idx <= _totalAverage) {
+      return 1;
+    } else if (idx - 1 < _totalAverage) {
+      return _totalAverage % 1;
+    } else {
+      return 0;
+    }
+  }
+
   useEffect(() => {
     getDataList();
   }, []);
@@ -39,11 +49,13 @@ export default function MyReview() {
               </StProductTitle>
               <StProductSize>142-225cm</StProductSize>
               <StReviewStarWrapper>
-                <CustomStar id={`${createdAt}-1`} guage={1} />
-                <CustomStar id={`${createdAt}-2`} guage={1} />
-                <CustomStar id={`${createdAt}-3`} guage={1} />
-                <CustomStar id={`${createdAt}-4`} guage={0.2} />
-                <CustomStar id={`${createdAt}-5`} guage={0} />
+                {[1, 2, 3, 4, 5].map((starIdx) => (
+                  <CustomStar
+                    key={`${createdAt}-${starIdx}`}
+                    starId={`${createdAt}-${starIdx}`}
+                    percentage={getStarPercentageWithAverage(starIdx, totalAverage)}
+                  />
+                ))}
               </StReviewStarWrapper>
               <StReviewInfo>nayeon | {result} | 오늘의집 리뷰</StReviewInfo>
               <StReviewText>{comment}</StReviewText>
