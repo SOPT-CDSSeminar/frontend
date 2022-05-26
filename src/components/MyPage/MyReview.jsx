@@ -3,7 +3,7 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { ICBlankStar, ICFullStar } from "../../asset/icon";
+import CustomStar from "./CustomStar";
 
 export default function MyReview() {
   const [products, setProducts] = useState([]);
@@ -25,7 +25,7 @@ export default function MyReview() {
         <StBtnLatestOrder>최신순</StBtnLatestOrder>
       </StBtnWrapper>
       {products &&
-        products.map((content, idx) => {
+        products.map((content) => {
           const { totalAverage, reviewImage, comment, createdAt } = content;
           const gitDate = { createdAt };
           const gitDateString = JSON.stringify(gitDate);
@@ -33,17 +33,17 @@ export default function MyReview() {
           const result = moment(subDate, "YYYY-MM-DD").format("YYYY.MM.DD");
 
           return (
-            <StProductCard key={idx}>
+            <StProductCard key={createdAt}>
               <StProductTitle>
                 멜팅스튜디오 느긋한 오후의 기록, 쉬폰 패브릭 포스터 / 73 Boston #2 / 142-225cm
               </StProductTitle>
               <StProductSize>142-225cm</StProductSize>
               <StReviewStarWrapper>
-                <ICFullStar />
-                <ICFullStar />
-                <ICFullStar />
-                <ICFullStar />
-                <ICBlankStar />
+                <CustomStar id={`${createdAt}-1`} guage={1} />
+                <CustomStar id={`${createdAt}-2`} guage={1} />
+                <CustomStar id={`${createdAt}-3`} guage={1} />
+                <CustomStar id={`${createdAt}-4`} guage={0.2} />
+                <CustomStar id={`${createdAt}-5`} guage={0} />
               </StReviewStarWrapper>
               <StReviewInfo>nayeon | {result} | 오늘의집 리뷰</StReviewInfo>
               <StReviewText>{comment}</StReviewText>
