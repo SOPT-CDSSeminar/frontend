@@ -1,4 +1,5 @@
 import axios from "axios";
+import moment from "moment";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -23,30 +24,34 @@ export default function MyReview() {
         <StBtnBestOrder>베스트순</StBtnBestOrder>
         <StBtnLatestOrder>최신순</StBtnLatestOrder>
       </StBtnWrapper>
-      {products.map((content) => {
-        const { name, place, size, star, nickname, date, platform, image, review } = content;
-        return (
-          <StProductCard key={name}>
-            <StProductTitle>
-              [{place}] {name}
-            </StProductTitle>
-            <StProductSize>{size}</StProductSize>
-            <StReviewStarWrapper>
-              <ICFullStar />
-              <ICFullStar />
-              <ICFullStar />
-              <ICFullStar />
-              <ICBlankStar />
-            </StReviewStarWrapper>
-            <StReviewInfo>
-              {nickname} | {date} | {platform} 리뷰
-            </StReviewInfo>
-            <StReviewText>{review}</StReviewText>
-            <StBtnEdit>수정</StBtnEdit>
-            <StReviewImg src={image} alt="페브릭 포스터" />
-          </StProductCard>
-        );
-      })}
+      {products &&
+        products.map((content, idx) => {
+          const { totalAverage, reviewImage, comment, createdAt } = content;
+          const gitDate = { createdAt };
+          const gitDateString = JSON.stringify(gitDate);
+          const subDate = gitDateString.slice(14, 24);
+          const result = moment(subDate, "YYYY-MM-DD").format("YYYY.MM.DD");
+
+          return (
+            <StProductCard key={idx}>
+              <StProductTitle>
+                멜팅스튜디오 느긋한 오후의 기록, 쉬폰 패브릭 포스터 / 73 Boston #2 / 142-225cm
+              </StProductTitle>
+              <StProductSize>142-225cm</StProductSize>
+              <StReviewStarWrapper>
+                <ICFullStar />
+                <ICFullStar />
+                <ICFullStar />
+                <ICFullStar />
+                <ICBlankStar />
+              </StReviewStarWrapper>
+              <StReviewInfo>nayeon | {result} | 오늘의집 리뷰</StReviewInfo>
+              <StReviewText>{comment}</StReviewText>
+              <StBtnEdit>수정</StBtnEdit>
+              <StReviewImg src={reviewImage} alt="페브릭 포스터" />
+            </StProductCard>
+          );
+        })}
     </StCardSection>
   );
 }
@@ -109,7 +114,7 @@ const StReviewStarWrapper = styled.ul`
   display: flex;
 `;
 const StReviewInfo = styled.p`
-  width: 20.7rem;
+  width: 26rem;
   height: 1.7rem;
 
   margin-bottom: 1.2rem;
@@ -137,7 +142,7 @@ const StBtnEdit = styled.button`
   height: 4.8rem;
 
   position: absolute;
-  right: 1.4rem;
+  right: 0rem;
 
   font-size: 1.2rem;
 
