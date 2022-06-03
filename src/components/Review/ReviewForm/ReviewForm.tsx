@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 import { ICReviewFormCompletionBtn } from "../../../asset/icon";
@@ -13,7 +14,7 @@ export default function ReviewForm() {
   const [reviewText, setReviewText] = useState<string>("");
   const [isError, setIsError] = useState<boolean>(false);
   const [errorText, setErrorText] = useState<string>("");
-
+  const navigate = useNavigate();
   const reviewInfo = useRef<PostBody>({ totalAverage: 0, reviewImage: "", comment: "" });
   // const check;
   // 리뷰 텍스트
@@ -48,7 +49,9 @@ export default function ReviewForm() {
       // const { data } = await postData(reviewData);
       const JSON_reviewInfo = JSON.stringify(reviewInfo.current);
       console.log("stringify 먹인거>>>>>", JSON_reviewInfo);
-      // const JSON_reviewInfo = awaitpostData(JSON_reviewInfo);
+      const response = await postData(reviewInfo.current);
+      console.log(response);
+      navigate("/mypage");
     }
   };
 
