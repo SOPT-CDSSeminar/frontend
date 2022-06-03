@@ -1,5 +1,5 @@
 export interface PostBody {
-  toalAverage: number;
+  totalAverage: number;
   reviewImage: string;
   comment: string;
 }
