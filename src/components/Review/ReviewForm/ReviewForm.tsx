@@ -52,10 +52,7 @@ export default function ReviewForm() {
       };
 
       // const { data } = await postData(reviewData);
-      const JSON_reviewInfo = JSON.stringify(reviewInfo.current);
-      console.log("stringify 먹인거>>>>>", JSON_reviewInfo);
-      const response = await postData(reviewInfo.current);
-      console.log(response);
+      await postData(reviewInfo.current);
       navigate("/mypage");
     }
   };
