@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 import { ICReviewFormCompletionBtn } from "../../../asset/icon";
+import { PostBody } from "../../../utils/dataType";
+import { postData } from "../../../utils/lib/api";
 import PhotoAttach from "./PhotoAttach";
 import ReviewWrite from "./ReviewWrite";
 import StarEvaluationArticle from "./StartEvaluation";
-
 export default function ReviewForm() {
   const [imgFile, setImgFile] = useState<File>();
   const [starEvluationList, setStarEvluationList] = useState<number[]>([0, 0, 0, 0, 0]);
@@ -32,8 +33,20 @@ export default function ReviewForm() {
   };
 
   // 완료 버튼
-  const handleRevireForm = () => {
+  const postReviewForm = async () => {
     console.log("리뷰완료");
+    const reviewData: PostBody = { toalAverage: 12, reviewImage: "123", comment: "!23" };
+    // const { data } = await postData(reviewData);
+
+    if (imgFile) {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(imgFile);
+      fileReader.onload = (e: ProgressEvent<FileReader>) => {
+        // const previewImage = docume?nt.getElementById("image");
+        // previewImage.src = e.target.result;
+        console.log(e.target?.result);
+      };
+    }
   };
 
   const starEvaluationListTitle: string[] = ["내구성", "가격", "디자인", "배송"];
@@ -41,20 +54,6 @@ export default function ReviewForm() {
   const handleImgFile = (selectImgFile: File) => {
     setImgFile(selectImgFile);
   };
-
-  // 파일 업로드 함수
-  // const uploadFile = function (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) {
-  //   const formData = new FormData();
-  //   if (imgFile) {
-  //     formData.append("uploadImage", imgFile, imgFile.name);
-  //     const config = {
-  //       Header: {
-  //         "content-type": "multipart/form-data",
-  //       },
-  //     };
-  //     axios.post("", formData, config);
-  //   }
-  // };
 
   // 별점 평가 다루는 함수
   const handleStarEvaluationList = (newStarEvluationItem: number, title: string) => {
@@ -87,7 +86,7 @@ export default function ReviewForm() {
         <StReviewErrorSpan>{errorText}</StReviewErrorSpan>
       </StReviewTitle>
       <ReviewWrite isError={isError} reviewText={reviewText} handleReviewText={handleReviewText} />
-      <ICReviewFormCompletionBtn onClick={handleRevireForm} />
+      <ICReviewFormCompletionBtn onClick={postReviewForm} />
     </StReviewFormWrapper>
   );
 }

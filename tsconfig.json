@@ -23,7 +23,7 @@
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx",
+    "**/*.tsx", "src/utils/proxy.js",
   ],
   "exclude": [
     "node_modules"
