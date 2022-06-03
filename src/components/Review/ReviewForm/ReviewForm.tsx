@@ -1,7 +1,9 @@
+import { constants } from "http2";
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 import { ICReviewFormCompletionBtn } from "../../../asset/icon";
+import { PostBody } from "../../../utils/lib/dataType";
 import PhotoAttach from "./PhotoAttach";
 import ReviewWrite from "./ReviewWrite";
 import StarEvaluationArticle from "./StartEvaluation";
@@ -34,7 +36,27 @@ export default function ReviewForm() {
   // 완료 버튼
   const handleRevireForm = () => {
     console.log("리뷰완료");
+    fetchPostByAxios();
   };
+
+  //서버에 post 하는 함수
+  async function fetchPostByAxios() {
+    let starSum = 0;
+    starEvluationList.forEach((item) => {
+      starSum += item;
+    });
+    console.log(starSum);
+
+    const reviewInfo: PostBody = {
+      totalAverage: starSum / 4,
+      reviewImage: "",
+      comment: reviewText,
+    };
+    const JSON_reviewInfo = JSON.stringify(reviewInfo);
+
+    console.log("stringify 먹인거>>>>>", JSON_reviewInfo);
+    // const JSON_reviewInfo = await axios.post("url", JSON_reviewInfo);
+  }
 
   const starEvaluationListTitle: string[] = ["내구성", "가격", "디자인", "배송"];
   // 이미지 파일
