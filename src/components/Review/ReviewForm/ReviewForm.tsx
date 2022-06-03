@@ -15,7 +15,12 @@ export default function ReviewForm() {
   const [isError, setIsError] = useState<boolean>(false);
   const [errorText, setErrorText] = useState<string>("");
   const navigate = useNavigate();
-  const reviewInfo = useRef<PostBody>({ totalAverage: 0, reviewImage: "", comment: "" });
+  const reviewInfo = useRef<PostBody>({
+    totalAverage: 0,
+    reviewImage:
+      "https://www.google.com/imgres?imgurl=https%3A%2F%2Fs3-ap-northeast-1.amazonaws.com%2Fbucketplace-v2-development%2Fuploads%2Fdefault_images%2Fopen_graph_icon_2.png&imgrefurl=https%3A%2F%2Fohou.se%2F&tbnid=gGlfm_Tef-lVxM&vet=12ahUKEwiHi4no35D4AhUF_JQKHeYaBJcQMygAegUIARDVAQ..i&docid=YlARzvIr5C9kmM&w=1024&h=1024&q=%EC%98%A4%EB%8A%98%EC%9D%98%EC%A7%91&ved=2ahUKEwiHi4no35D4AhUF_JQKHeYaBJcQMygAegUIARDVAQ",
+    comment: "",
+  });
   // const check;
   // 리뷰 텍스트
   const handleReviewText = (newReviewText: string) => {
@@ -43,7 +48,7 @@ export default function ReviewForm() {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(imgFile);
       fileReader.onload = (e: ProgressEvent<FileReader>) => {
-        reviewInfo.current.reviewImage = e.target?.result as string;
+        // reviewInfo.current.reviewImage = e.target?.result as string;
       };
 
       // const { data } = await postData(reviewData);
