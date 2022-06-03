@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 import { ICReviewFormCompletionBtn } from "../../../asset/icon";
+import { PostBody } from "../../../utils/dataType";
+import { postData } from "../../../utils/lib/api";
 import PhotoAttach from "./PhotoAttach";
 import ReviewWrite from "./ReviewWrite";
 import StarEvaluationArticle from "./StartEvaluation";
-
 export default function ReviewForm() {
   const [imgFile, setImgFile] = useState<File>();
   const [starEvluationList, setStarEvluationList] = useState<number[]>([0, 0, 0, 0, 0]);
-
   const [reviewText, setReviewText] = useState<string>("");
   const [isError, setIsError] = useState<boolean>(false);
   const [errorText, setErrorText] = useState<string>("");
-
+  const navigate = useNavigate();
+  const reviewInfo = useRef<PostBody>({ totalAverage: 0, reviewImage: "", comment: "" });
   // const check;
   // 리뷰 텍스트
   const handleReviewText = (newReviewText: string) => {
@@ -30,10 +32,27 @@ export default function ReviewForm() {
       setIsError(true);
     }
   };
+  //서버에 post 하는 함수
+  const fetchPostByAxios = async () => {
+    if (!isError && imgFile) {
+      reviewInfo.current.comment = reviewText;
+      starEvluationList.forEach((item) => {
+        reviewInfo.current.totalAverage += item;
+      });
+      reviewInfo.current.totalAverage /= 4;
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(imgFile);
+      fileReader.onload = (e: ProgressEvent<FileReader>) => {
+        reviewInfo.current.reviewImage = e.target?.result as string;
+      };
 
-  // 완료 버튼
-  const handleRevireForm = () => {
-    console.log("리뷰완료");
+      // const { data } = await postData(reviewData);
+      const JSON_reviewInfo = JSON.stringify(reviewInfo.current);
+      console.log("stringify 먹인거>>>>>", JSON_reviewInfo);
+      const response = await postData(reviewInfo.current);
+      console.log(response);
+      navigate("/mypage");
+    }
   };
 
   const starEvaluationListTitle: string[] = ["내구성", "가격", "디자인", "배송"];
@@ -41,20 +60,6 @@ export default function ReviewForm() {
   const handleImgFile = (selectImgFile: File) => {
     setImgFile(selectImgFile);
   };
-
-  // 파일 업로드 함수
-  // const uploadFile = function (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) {
-  //   const formData = new FormData();
-  //   if (imgFile) {
-  //     formData.append("uploadImage", imgFile, imgFile.name);
-  //     const config = {
-  //       Header: {
-  //         "content-type": "multipart/form-data",
-  //       },
-  //     };
-  //     axios.post("", formData, config);
-  //   }
-  // };
 
   // 별점 평가 다루는 함수
   const handleStarEvaluationList = (newStarEvluationItem: number, title: string) => {
@@ -87,7 +92,7 @@ export default function ReviewForm() {
         <StReviewErrorSpan>{errorText}</StReviewErrorSpan>
       </StReviewTitle>
       <ReviewWrite isError={isError} reviewText={reviewText} handleReviewText={handleReviewText} />
-      <ICReviewFormCompletionBtn onClick={handleRevireForm} />
+      <ICReviewFormCompletionBtn onClick={fetchPostByAxios} />
     </StReviewFormWrapper>
   );
 }

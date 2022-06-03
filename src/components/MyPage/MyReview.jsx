@@ -3,15 +3,20 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
+import { reqAPI } from "../../utils/lib";
 import CustomStar from "./CustomStar";
 
 export default function MyReview() {
   const [products, setProducts] = useState([]);
 
   async function getDataList() {
-    const result = await axios.get("http://localhost:4000/data");
-    //console.log("통신 결과: ", result);
-    setProducts(result.data);
+    const result = await reqAPI.get("/review", {
+      params: {
+        sort: "new",
+      },
+    });
+    console.log("통신 결과: ", result.data.data);
+    setProducts(result.data.data);
   }
 
   function getStarPercentageWithAverage(idx, _totalAverage) {
@@ -32,7 +37,7 @@ export default function MyReview() {
     <StCardSection>
       <StBtnWrapper>
         <StBtnBestOrder>베스트순</StBtnBestOrder>
-        <StBtnLatestOrder>최신순</StBtnLatestOrder>
+        <StBtnLatestOrder>시간순</StBtnLatestOrder>
       </StBtnWrapper>
       {products &&
         products.map((content) => {
