@@ -14,7 +14,7 @@ export default function MyReview() {
         sort: "new",
       },
     });
-    setProducts(result.data.data);
+    setProducts(result.data.data.reverse());
   }
 
   function getStarPercentageWithAverage(idx, _totalAverage) {
@@ -35,7 +35,7 @@ export default function MyReview() {
     <StCardSection>
       <StBtnWrapper>
         <StBtnBestOrder>베스트순</StBtnBestOrder>
-        <StBtnLatestOrder>시간순</StBtnLatestOrder>
+        <StBtnLatestOrder>최신순</StBtnLatestOrder>
       </StBtnWrapper>
       {products &&
         products.map((content) => {
