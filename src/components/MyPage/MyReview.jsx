@@ -1,4 +1,3 @@
-import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -15,7 +14,6 @@ export default function MyReview() {
         sort: "new",
       },
     });
-    console.log("통신 결과: ", result.data.data);
     setProducts(result.data.data.reverse());
   }
 

@@ -26,7 +26,6 @@ export default function PhotoAttach(props: PhotoAttachProps) {
 
       reader.onloadend = () => {
         const base64 = reader.result;
-        console.log(base64);
         if (base64) {
           setImgBase64(base64.toString());
         }
