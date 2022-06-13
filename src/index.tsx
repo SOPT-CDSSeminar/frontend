@@ -4,6 +4,7 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { reset } from "styled-reset";
 
 import App from "./App";
+import { worker } from "./mocks/browser";
 import theme from "./style/theme";
 
 export const GlobalStyle = createGlobalStyle`
@@ -51,6 +52,10 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 `;
+
+if (process.env.NODE_ENV === "development") {
+  worker.start();
+}
 
 ReactDOM.render(
   <React.StrictMode>

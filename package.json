@@ -69,5 +69,8 @@
     "msw": "^0.42.1",
     "prettier": "^2.6.0",
     "webpack": "^5.72.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
